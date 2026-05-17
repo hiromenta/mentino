@@ -1,3 +1,11 @@
 <my-loader></my-loader>
-<div class="container title">{{ title }}</div>
-<router-outlet></router-outlet>
+
+<div class="title">{{ title }}</div>
+
+<div class="container">
+    <div class="tabs">
+        <div (click)="onTabClick(tab.url)" *ngFor="let tab of tabs; index as i" class="tab" [class.active]="i === getActive()">{{ getTranslation(tab.label) }}</div>
+    </div>
+
+    <router-outlet></router-outlet>
+</div>

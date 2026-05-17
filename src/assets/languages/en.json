@@ -13,5 +13,11 @@
             "dark": "Dark",
             "custom": "Custom"
         }
+    },
+    "home": {
+        "tabs": {
+            "home": "Home",
+            "settings": "Settings"
+        }
     }
 }

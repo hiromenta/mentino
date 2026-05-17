@@ -1,10 +1,13 @@
 div {
-    position: absolute;
+    position: fixed;
     z-index: 2;
     width: 100vw;
     height: 100vh;
-    background-color: #ffffff77;
+    background-color: #80947b77;
     color: black;
     top: 0;
     left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

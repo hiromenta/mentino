@@ -5,6 +5,7 @@ import { Themes } from './models/themes.model';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { LoaderService } from './services/loader.service';
+import { Paths } from './app-routing.module';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,11 @@ export class AppComponent implements OnInit {
   title = 'mentino';
 
   loadedServices: any[] = [];
+
+  tabs = [
+      { label: 'home.tabs.home', url: Paths.HOME },
+      { label: 'home.tabs.settings', url: Paths.SETTINGS }
+  ];
 
   constructor(
     private _router: Router,
@@ -45,6 +51,18 @@ export class AppComponent implements OnInit {
     }
   }
 
+  getActive() {
+    return this.tabs.findIndex(tt => tt.url === location.pathname.split('/')[1]);
+  }
+
+  onTabClick(url: string) {
+    this._router.navigate([url]);
+  }
+
+  getTranslation(message: string) {
+    return this._translateService.translate(message);
+  }
+
   private _checkAllServicesLoaded() {
     for (const loaded of this.loadedServices) {
       if (!loaded) {
@@ -52,12 +70,12 @@ export class AppComponent implements OnInit {
       }
     }
 
-    const path = location.pathname.split('/')[1];
+    const path = [...new Set(location.pathname.split('/'))];
 
     this._loaderService.hide();
 
-    this._router.navigate(['randomBullshitGo']).then(() => {
-      this._router.navigate([path]);
+    this._router.navigate(['randomBullshitGo'], { skipLocationChange: true }).then(() => {
+      this._router.navigate([...path]);
     });
 
     return true;
