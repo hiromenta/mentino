@@ -18,6 +18,82 @@
         "tabs": {
             "home": "Home",
             "settings": "Settings"
-        }
+        },
+        "filters": {
+            "capColors": {
+                "title": "Cap color",
+                "red": "Red",
+                "orange": "Orange",
+                "brown": "Brown",
+                "white": "White",
+                "yellow": "Yellow"
+            },
+            "fleshColors": {
+                "title": "Flesh color",
+                "red": "Red",
+                "orange": "Orange",
+                "brown": "Brown",
+                "white": "White",
+                "yellow": "Yellow"
+            },
+            "hymeniumStructure": {
+                "title": "Hymenium structure",
+                "gills": "Gills"
+            },
+            "cap": {
+                "title": "Cap",
+                "convex": "Convex",
+                "flat": "Flat",
+                "semispherical": "Semispherical"
+            },
+            "hymenium": {
+                "title": "Hymenium",
+                "free": "Free"
+            },
+            "stipe": {
+                "title": "Stipe",
+                "ring_volva": "Ring and volva",
+                "ring": "Ring",
+                "volva": "Volva"
+            },
+            "spores": {
+                "title": "Spores",
+                "red": "Red",
+                "orange": "Orange",
+                "brown": "Brown",
+                "white": "White",
+                "yellow": "Yellow"
+            },
+            "trees": {
+                "title": "Trees",
+                "birch": "Birch",
+                "norway_spruce": "Norway spruce",
+                "pine": "Pine",
+                "larch": "Larch",
+                "beech": "Beech",
+                "oak": "Oak"
+            },
+            "flesh": {
+                "title": "Flesh",
+                "immutable": "Immutable"
+            },
+            "safety": {
+                "title": "Safety",
+                "E": "Edible",
+                "EB": "Edible after cooking",
+                "I": "Inedible",
+                "P": "Poisonous"
+            }
+        },
+        "detail": {
+            "tags": {
+                "E": "Edible",
+                "EB": "Edible after cooking for ",
+                "I": "Inedible",
+                "P": "Poisonous"
+            }
+        },
+        "alert": "The method used is not completely safe, do not pick up mushrooms you don't know",
+        "message": "Missing a mushroom? Open an issue on "
     }
 }

@@ -1,0 +1,152 @@
+.alert {
+    color: var(--danger);
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    height: calc(100% - 5rem);
+}
+
+.filters {
+    height: calc(100% - 2rem);
+    overflow-y: auto;
+    width: 25%;
+    max-width: 15rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    padding: 1rem;
+    border: 5px solid var(--secondary);
+    background-color: var(--accent-light);
+}
+
+.mushrooms {
+    height: calc(100% - 2rem);
+    overflow-y: auto;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    width: 75%;
+
+    &.reduced {
+        width: 40%;
+    }
+}
+
+.mushroom {
+    width: 30%;
+    max-width: 9rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    background-color: var(--accent-light);
+
+    &.E {
+        border: 5px solid var(--success);
+    }
+    &.P {
+        border: 5px solid var(--danger);
+    }
+    &.EB {
+        border: 5px solid var(--warning);
+    }
+    &.I {
+        border: 5px solid var(--black);
+    }
+}
+
+.img {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65%;
+    overflow: hidden;
+
+    img {
+        height: 100%;
+    }
+}
+
+.name {
+    padding: 0 0.5rem;
+}
+
+.detail {
+    height: calc(100% - 2rem);
+    overflow-y: auto;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    padding: 1rem;
+    width: 35%;
+    max-width: 25rem;
+    border: 5px solid var(--secondary);
+    background-color: var(--accent-light);
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1.25rem 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-name {
+    font-size: 1.5rem;
+}
+
+.tag {
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    padding: 0.25rem 0.5rem;
+    color: var(--white);
+
+    &.E {
+        background-color: var(--success);
+    }
+    &.P {
+        background-color: var(--danger);
+    }
+    &.EB {
+        background-color: var(--warning);
+    }
+    &.I {
+        background-color: var(--black);
+    }
+}
+
+.detail-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-height: 15rem;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+    }
+
+    &.half {
+        max-height: 7.5rem;
+
+        img {
+            width: 50%;
+        }
+    }
+}
+
+.message {
+    position: absolute;
+    bottom: 1rem;
+    text-align: center;
+    width: 100%;
+}

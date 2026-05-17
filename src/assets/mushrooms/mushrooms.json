@@ -1,0 +1,30 @@
+[
+    {
+        "name": "amanita muscaria",
+        "capColors": ["red", "orange", "yellow"],
+        "fleshColors": ["white"],
+        "hymeniumStructure": "gills",
+        "cap": ["convex", "flat"],
+        "hymenium": "free",
+        "stipe": "ring_volva",
+        "spores": "white",
+        "trees": ["birch", "norway_spruce", "pine", "larch", "beech", "oak"],
+        "flesh": "immutable",
+        "safety": "P",
+        "wikipedia": "https://www.wikipedia.org/wiki/Amanita_muscaria"
+    },
+    {
+        "name": "amanita caesarea",
+        "capColors": ["orange", "yellow"],
+        "fleshColors": ["yellow"],
+        "hymeniumStructure": "gills",
+        "cap": ["semispherical", "convex"],
+        "hymenium": "free",
+        "stipe": "ring_volva",
+        "spores": "white",
+        "trees": [],
+        "flesh": "immutable",
+        "safety": "E",
+        "wikipedia": "https://www.wikipedia.org/wiki/Amanita_caesarea"
+    }
+]

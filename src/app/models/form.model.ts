@@ -1,8 +1,11 @@
 export enum ControlType {
+    TITLE,
+    SPACER,
     TEXT,
     PASSWORD,
     EMAIL,
-    RADIO
+    RADIO,
+    CHECKBOX
 }
 
 export interface Control {
@@ -15,6 +18,7 @@ export interface Control {
     required?: boolean;
     options?: { value: string | number, label: string }[];
     defaultValue?: any;
+    canClear?: boolean;
 }
 
 export interface MyForm {

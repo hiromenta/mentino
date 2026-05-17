@@ -28,14 +28,18 @@
 }
 
 .tab {
-    background-color: var(--dark);
+    background-color: var(--primary);
     padding: 0.25rem 0.5rem;
-    // border-radius: 5px;
     cursor: pointer;
     flex: 1;
     color: var(--light);
 
+    &:hover {
+        background-color: var(--dark);
+    }
+
     &.active {
         background-color: var(--accent);
+        color: var(--accent-light);
     }
 }

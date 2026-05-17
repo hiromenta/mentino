@@ -13,10 +13,13 @@ export class FormComponent implements AfterViewInit, AfterContentInit {
 
     @Output() formChanged: EventEmitter<MyForm> = new EventEmitter();
 
+    radioValue: string = '';
+    checkboxValues: string[] = [];
+
     constructor() {}
 
     ngAfterContentInit(): void {
-        this._updateValueAfterInit();
+        // this._updateValueAfterInit();
     }
 
     ngAfterViewInit(): void {
@@ -29,6 +32,35 @@ export class FormComponent implements AfterViewInit, AfterContentInit {
         for (const control of (this.form?.controls || [])) {
             this.updateValue(control, document.querySelector('#' + control.selector) as HTMLInputElement);
         }
+    }
+
+    toggleRadio(value: string | number) {
+        const parsedValue = value.toString();
+
+        if (this.radioValue === parsedValue) {
+            this.radioValue = '';
+        } else {
+            this.radioValue = parsedValue;
+        }
+
+        return this.radioValue;
+    }
+
+    toggleCheckbox(value: string | number) {
+        const parsedValue = value.toString();
+
+        if (this.checkboxValues.includes(parsedValue)) {
+            const index = this.checkboxValues.indexOf(parsedValue);
+            this.checkboxValues.splice(index, 1);
+        } else {
+            this.checkboxValues.push(parsedValue);
+        }
+
+        return this.checkboxValues.join(',');
+    }
+
+    checkboxSelected(value: string | number) {
+        return this.checkboxValues.includes(value.toString());
     }
 
     getControlType() {

@@ -18,6 +18,82 @@
         "tabs": {
             "home": "Home",
             "settings": "Impostazioni"
-        }
+        },
+        "filters": {
+            "capColors": {
+                "title": "Colore cappello",
+                "red": "Rosso",
+                "orange": "Arancione",
+                "brown": "Marrone",
+                "white": "Bianco",
+                "yellow": "Giallo"
+            },
+            "fleshColors": {
+                "title": "Colore carne",
+                "red": "Rosso",
+                "orange": "Arancione",
+                "brown": "Marrone",
+                "white": "Bianco",
+                "yellow": "Giallo"
+            },
+            "hymeniumStructure": {
+                "title": "Struttura imenio",
+                "gills": "Lamelle"
+            },
+            "cap": {
+                "title": "Cappello",
+                "convex": "Convesso",
+                "flat": "Piatto",
+                "semispherical": "Semisferico"
+            },
+            "hymenium": {
+                "title": "Imenio",
+                "free": "Libero"
+            },
+            "stipe": {
+                "title": "Gambo",
+                "ring_volva": "Anello e volva",
+                "ring": "Anello",
+                "volva": "Volva"
+            },
+            "spores": {
+                "title": "Spore",
+                "red": "Rosso",
+                "orange": "Arancione",
+                "brown": "Marrone",
+                "white": "Bianco",
+                "yellow": "Giallo"
+            },
+            "trees": {
+                "title": "Alberi",
+                "birch": "Betulla",
+                "norway_spruce": "Abete rosso",
+                "pine": "Pino",
+                "larch": "Larice",
+                "beech": "Faggio",
+                "oak": "Quercia"
+            },
+            "flesh": {
+                "title": "Carne",
+                "immutable": "Immutabile"
+            },
+            "safety": {
+                "title": "Commestibilità",
+                "E": "Commestibile",
+                "EB": "Commestibile previa cottura",
+                "I": "Non commestibile",
+                "P": "Velenoso"
+            }
+        },
+        "detail": {
+            "tags": {
+                "E": "Commestibile",
+                "EB": "Commestibile ma cuocere per ",
+                "I": "Non commestibile",
+                "P": "Velenoso"
+            }
+        },
+        "alert": "Il metodo utilizzato non è completamente sicuro, non raccogliere funghi che non conosci",
+        "message": "Manca un fungo? Apri un issue su "
     }
 }

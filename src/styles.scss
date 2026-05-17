@@ -2,16 +2,39 @@
 
 // Variables will be overwritten by themes.service.ts
 :root {
-    --white: #ccc;
+    --white: #e7e7e7;
     --black: #111;
     --primary: #0e361c;
     --secondary: #19541f;
     --accent: #446c48;
+    --accent-light: #8a9f71;
     --light: #7c9060;
     --dark: #042514;
     --danger: #721f2a;
     --success: #3d612e;
+    --warning: #bd862d;
     --background: url('/assets/images/leaves_dark.jpg');
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    width: 10px;
+    background: var(--primary);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark);
 }
 
 * {

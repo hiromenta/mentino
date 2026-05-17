@@ -1,1 +1,40 @@
-home
+<div class="alert">{{ 'home.alert' | translate }}</div>
+
+<div class="main">
+    <div class="filters" *ngIf="form">
+        <my-form [form]="form"></my-form>
+    </div>
+
+    <div class="mushrooms" [class.reduced]="!!mushroom">
+        <div (click)="mushroom = m" *ngFor="let m of getMushrooms()" [class]="'mushroom ' + m.safety">
+            <div class="img">
+                <img [src]="'../../../assets/mushrooms/' + getImgName(m.name) + '_min.jpg'" alt="">
+            </div>
+            <div class="name">
+                {{ m.name | titlecase }}
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="mushroom" class="detail">
+        <div class="close" (click)="mushroom = undefined">x</div>
+
+        <div class="detail-name">{{ mushroom.name | titlecase }}</div>
+
+        <div class="tag" [class]="mushroom.safety">{{ 'home.detail.tags.' + mushroom.safety | translate }}<span *ngIf="mushroom.cookingTime">{{ mushroom.cookingTime }}m</span></div>
+
+        <div class="detail-imgs">
+            <div class="detail-img">
+                <img [src]="'../../../assets/mushrooms/' + getImgName(mushroom.name) + '_1.jpg'" alt="">
+            </div>
+            <div class="detail-img half">
+                <img [src]="'../../../assets/mushrooms/' + getImgName(mushroom.name) + '_1.jpg'" alt="">
+                <img [src]="'../../../assets/mushrooms/' + getImgName(mushroom.name) + '_1.jpg'" alt="">
+            </div>
+        </div>
+
+        <div class="wiki"><a target="_blank" [href]="mushroom.wikipedia">Wikipedia</a></div>
+    </div>
+</div>
+
+<div class="message">{{ 'home.message' | translate }}<a target="_blank" href="https://github.com/xHiro133/mentino/issues">Github</a></div>
