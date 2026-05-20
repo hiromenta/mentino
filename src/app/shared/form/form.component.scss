@@ -4,6 +4,7 @@
     background-color: var(--white);
     border-radius: 100%;
     margin-top: 0.15rem;
+    border: 2px solid var(--accent);
 }
 
 .checkbox {
@@ -11,13 +12,14 @@
     height: 15px;
     background-color: var(--white);
     margin-top: 0.15rem;
+    border: 2px solid var(--accent);
     position: relative;
 
     span {
         color: var(--white);
         position: absolute;
-        bottom: 0.01rem;
-        left: 0.15rem;
+        bottom: -0.2rem;
+        left: 0.1rem;
     }
 }
 
@@ -37,4 +39,11 @@
     span {
         width: calc(100% - 20px);
     }
+}
+
+.color-input {
+    margin: 0.25rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }

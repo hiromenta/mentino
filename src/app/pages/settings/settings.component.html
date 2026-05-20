@@ -1,7 +1,5 @@
-{{ 'language.title' | translate }}
-<my-form [form]="languageForm" (formChanged)="changeLanguage()"></my-form>
-
-<br>
-
-{{ 'theme.title' | translate }}
-<my-form [form]="themeForm" (formChanged)="changeTheme()"></my-form>
+<div class="form-container">
+    <div class="form">
+        <my-form [form]="form" (formChanged)="formChanged($event)"></my-form>
+    </div>
+</div>

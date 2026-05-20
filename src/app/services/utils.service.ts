@@ -1,0 +1,32 @@
+import { Injectable } from "@angular/core";
+
+@Injectable()
+export class UtilsService {
+
+    private _fullscreen = JSON.parse(localStorage.getItem('fullscreen') || 'false');
+
+    constructor() {}
+
+    get fullscreen() {
+        return this._fullscreen;
+    }
+
+    setFullscreen(fullscreen: boolean) {
+        this._fullscreen = fullscreen;
+        this._updateFullscreen();
+    }
+
+    toggleFullscreen() {
+        this.setFullscreen(!this._fullscreen);
+    }
+
+    private _updateFullscreen() {
+        localStorage.setItem('fullscreen', JSON.stringify(this._fullscreen));
+    }
+
+    getRandomSelector() {
+        const number = Math.random() * 100;
+        return 's' + number.toString().split('.')[1];
+    }
+
+}

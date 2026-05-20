@@ -1,17 +1,32 @@
 {
-    "language": {
-        "title": "Lingua",
-        "languages": {
-            "english": "Inglese",
-            "italian": "Italiano"
-        }
-    },
-    "theme": {
-        "title": "Tema",
-        "themes": {
-            "light": "Light",
-            "dark": "Dark",
-            "custom": "Custom"
+    "settings": {
+        "language": {
+            "title": "Lingua",
+            "languages": {
+                "english": "Inglese",
+                "italian": "Italiano"
+            }
+        },
+        "options": {
+            "title": "Opzioni",
+            "fullscreen": "Fullscreen"
+        },
+        "theme": {
+            "title": "Tema",
+            "themes": {
+                "light": "Light",
+                "dark": "Dark",
+                "custom": "Custom"
+            },
+            "colors": {
+                "primary": "Colore primario",
+                "secondary": "Colore secondario",
+                "accent": "Colore d'accento (normale)",
+                "accentLight": "Colore d'accento (chiaro)",
+                "light": "Colore chiaro",
+                "dark": "Colore scuro",
+                "background": "URL immagine di sfondo"
+            }
         }
     },
     "home": {
@@ -30,11 +45,11 @@
             },
             "fleshColors": {
                 "title": "Colore carne",
-                "red": "Rosso",
+                "red": "Rossa",
                 "orange": "Arancione",
                 "brown": "Marrone",
-                "white": "Bianco",
-                "yellow": "Giallo"
+                "white": "Bianca",
+                "yellow": "Gialla"
             },
             "hymeniumStructure": {
                 "title": "Struttura imenio",
@@ -58,11 +73,11 @@
             },
             "spores": {
                 "title": "Spore",
-                "red": "Rosso",
-                "orange": "Arancione",
-                "brown": "Marrone",
-                "white": "Bianco",
-                "yellow": "Giallo"
+                "red": "Rosse",
+                "orange": "Arancioni",
+                "brown": "Marroni",
+                "white": "Bianche",
+                "yellow": "Gialle"
             },
             "trees": {
                 "title": "Alberi",

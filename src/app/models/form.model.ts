@@ -5,7 +5,8 @@ export enum ControlType {
     PASSWORD,
     EMAIL,
     RADIO,
-    CHECKBOX
+    CHECKBOX,
+    COLOR
 }
 
 export interface Control {
@@ -19,10 +20,12 @@ export interface Control {
     options?: { value: string | number, label: string }[];
     defaultValue?: any;
     canClear?: boolean;
+    label?: string;
 }
 
 export interface MyForm {
     controls: Control[];
     valid?: boolean;
     value?: { [key: string]: any };
+    lastControlChanged?: string;
 }

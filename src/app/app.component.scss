@@ -10,16 +10,25 @@
 }
 
 .container {
-    width: 80%;
-    height: 80%;
     background-color: var(--light);
     border: 5px solid var(--secondary);
     border-radius: 5px;
     padding: 1rem;
     position: absolute;
-    top: 5rem;
     left: 50%;
     transform: translateX(-50%);
+
+    &.windowed {
+        width: 80%;
+        height: 80%;
+        top: 5rem;
+    }
+
+    &.fullscreen {
+        width: 100%;
+        height: 100%;
+        top: 0;
+    }
 }
 
 .tabs {
@@ -40,6 +49,6 @@
 
     &.active {
         background-color: var(--accent);
-        color: var(--accent-light);
+        color: var(--accentLight);
     }
 }

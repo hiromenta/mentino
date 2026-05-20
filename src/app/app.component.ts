@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { LoaderService } from './services/loader.service';
 import { Paths } from './app-routing.module';
+import { UtilsService } from './services/utils.service';
 
 @Component({
   selector: 'app-root',
@@ -28,7 +29,8 @@ export class AppComponent implements OnInit {
     private _router: Router,
     private _loaderService: LoaderService,
     private _themesService: ThemesService,
-    private _translateService: TranslateService
+    private _translateService: TranslateService,
+    private _utilsService: UtilsService
   ) {}
 
   ngOnInit(): void {
@@ -49,6 +51,10 @@ export class AppComponent implements OnInit {
         this._checkAllServicesLoaded();
       });
     }
+  }
+
+  isFullscreen() {
+    return this._utilsService.fullscreen;
   }
 
   getActive() {

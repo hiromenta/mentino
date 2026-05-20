@@ -8,6 +8,7 @@ import { TranslateService } from "./translate.service";
 import { LoaderService } from "./loader.service";
 import { AuthService } from "./auth.service";
 import { MushroomsService } from "./mushrooms.service";
+import { UtilsService } from "./utils.service";
 
 @NgModule({
     imports: [HttpClientModule],
@@ -19,7 +20,8 @@ import { MushroomsService } from "./mushrooms.service";
         TranslateService,
         LoaderService,
         AuthService,
-        MushroomsService
+        MushroomsService,
+        UtilsService
     ]
 })
 export class ServicesModule {}

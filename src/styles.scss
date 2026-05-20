@@ -7,7 +7,7 @@
     --primary: #0e361c;
     --secondary: #19541f;
     --accent: #446c48;
-    --accent-light: #8a9f71;
+    --accentLight: #8a9f71;
     --light: #7c9060;
     --dark: #042514;
     --danger: #721f2a;
@@ -39,6 +39,7 @@
 
 * {
     box-sizing: border-box;
+    // border: 2px solid red;
 }
 
 html, body {

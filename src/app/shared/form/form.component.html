@@ -2,7 +2,7 @@
     <ng-container *ngFor="let control of form.controls">
         <div *ngIf="control.type === getControlType().TITLE">{{ control.selector | translate }}</div>
 
-        <input *ngIf="control.type === getControlType().TEXT" #textInput (change)="updateValue(control, textInput)" type="text" [required]="control.required" [id]="control.selector" [placeholder]="(control.placeholder || '') | translate">
+        <input *ngIf="control.type === getControlType().TEXT" #textInput (change)="updateValue(control, textInput)" type="text" [required]="control.required" [id]="control.selector" [placeholder]="(control.placeholder || '') | translate" [value]="control.defaultValue || ''">
         
         <input *ngIf="control.type === getControlType().PASSWORD" #passwordInput (change)="updateValue(control, passwordInput)" type="password" [required]="control.required" [id]="control.selector" [placeholder]="(control.placeholder || '') | translate">
         
@@ -21,11 +21,16 @@
         <div *ngIf="control.type === getControlType().CHECKBOX">
             <input #checkboxInput type="hidden" [required]="control.required" [id]="control.selector" [value]="control.defaultValue || ''">
             <ng-container *ngFor="let option of control.options">
-                <div (click)="checkboxInput.value = toggleCheckbox(option.value); updateValue(control, checkboxInput)" class="radioCheckElement" [class.selected]="checkboxSelected(option.value)">
-                    <ng-container *ngTemplateOutlet="checkboxTemplate; context: { selected: checkboxSelected(option.value) }"></ng-container>
+                <div (click)="checkboxInput.value = toggleCheckbox(option.value); updateValue(control, checkboxInput)" class="radioCheckElement" [class.selected]="checkboxSelected(option.value, control)">
+                    <ng-container *ngTemplateOutlet="checkboxTemplate; context: { selected: checkboxSelected(option.value, control) }"></ng-container>
                     <span>{{ option.label | translate }}</span>
                 </div>
             </ng-container>
+        </div>
+
+        <div *ngIf="control.type === getControlType().COLOR" class="color-input">
+            <input #colorInput (change)="updateValue(control, colorInput)" type="color" [required]="control.required" [id]="control.selector" [placeholder]="(control.placeholder || '') | translate" [value]="control.defaultValue || ''">
+            <span *ngIf="control.label">{{ control.label | translate }}</span>
         </div>
 
         <div *ngIf="control.type === getControlType().SPACER"><br></div>

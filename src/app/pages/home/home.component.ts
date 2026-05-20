@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { MushroomsService } from "../../services/mushrooms.service";
 import { Mushroom } from "../../models/mushroom.model";
 import { ControlType, MyForm } from "../../models/form.model";
+import { UtilsService } from "../../services/utils.service";
 
 @Component({
     selector: 'my-home',
@@ -19,17 +20,17 @@ export class HomeComponent implements OnInit {
             { type: ControlType.TITLE, selector: 'home.filters.capColors.title' },
             {
                 selector: 'capColors',
-                type: ControlType.CHECKBOX,
+                type: ControlType.RADIO,
                 options: []
             },
-            { type: ControlType.SPACER, selector: this._getRandomSelector() },
+            { type: ControlType.SPACER, selector: this._utilsService.getRandomSelector() },
             { type: ControlType.TITLE, selector: 'home.filters.fleshColors.title' },
             {
                 selector: 'fleshColors',
-                type: ControlType.CHECKBOX,
+                type: ControlType.RADIO,
                 options: []
             },
-            { type: ControlType.SPACER, selector: this._getRandomSelector() },
+            { type: ControlType.SPACER, selector: this._utilsService.getRandomSelector() },
             { type: ControlType.TITLE, selector: 'home.filters.hymeniumStructure.title' },
             {
                 selector: 'hymeniumStructure',
@@ -37,14 +38,14 @@ export class HomeComponent implements OnInit {
                 canClear: true,
                 options: []
             },
-            { type: ControlType.SPACER, selector: this._getRandomSelector() },
+            { type: ControlType.SPACER, selector: this._utilsService.getRandomSelector() },
             { type: ControlType.TITLE, selector: 'home.filters.cap.title' },
             {
                 selector: 'cap',
-                type: ControlType.CHECKBOX,
+                type: ControlType.RADIO,
                 options: []
             },
-            { type: ControlType.SPACER, selector: this._getRandomSelector() },
+            { type: ControlType.SPACER, selector: this._utilsService.getRandomSelector() },
             { type: ControlType.TITLE, selector: 'home.filters.hymenium.title' },
             {
                 selector: 'hymenium',
@@ -52,28 +53,28 @@ export class HomeComponent implements OnInit {
                 canClear: true,
                 options: []
             },
-            { type: ControlType.SPACER, selector: this._getRandomSelector() },
+            { type: ControlType.SPACER, selector: this._utilsService.getRandomSelector() },
             { type: ControlType.TITLE, selector: 'home.filters.stipe.title' },
             {
                 selector: 'stipe',
-                type: ControlType.CHECKBOX,
+                type: ControlType.RADIO,
                 options: []
             },
-            { type: ControlType.SPACER, selector: this._getRandomSelector() },
+            { type: ControlType.SPACER, selector: this._utilsService.getRandomSelector() },
             { type: ControlType.TITLE, selector: 'home.filters.spores.title' },
             {
                 selector: 'spores',
-                type: ControlType.CHECKBOX,
+                type: ControlType.RADIO,
                 options: []
             },
-            { type: ControlType.SPACER, selector: this._getRandomSelector() },
+            { type: ControlType.SPACER, selector: this._utilsService.getRandomSelector() },
             { type: ControlType.TITLE, selector: 'home.filters.trees.title' },
             {
                 selector: 'trees',
-                type: ControlType.CHECKBOX,
+                type: ControlType.RADIO,
                 options: []
             },
-            { type: ControlType.SPACER, selector: this._getRandomSelector() },
+            { type: ControlType.SPACER, selector: this._utilsService.getRandomSelector() },
             { type: ControlType.TITLE, selector: 'home.filters.flesh.title' },
             {
                 selector: 'flesh',
@@ -81,11 +82,11 @@ export class HomeComponent implements OnInit {
                 canClear: true,
                 options: []
             },
-            { type: ControlType.SPACER, selector: this._getRandomSelector() },
+            { type: ControlType.SPACER, selector: this._utilsService.getRandomSelector() },
             { type: ControlType.TITLE, selector: 'home.filters.safety.title' },
             {
                 selector: 'safety',
-                type: ControlType.CHECKBOX,
+                type: ControlType.RADIO,
                 options: [
                     { value: 'E', label: 'E' },
                     { value: 'EB', label: 'EB' },
@@ -96,7 +97,7 @@ export class HomeComponent implements OnInit {
         ]
     };
 
-    constructor(private _mushroomsService: MushroomsService) {}
+    constructor(private _mushroomsService: MushroomsService, private _utilsService: UtilsService) {}
 
     ngOnInit(): void {
         this._mushroomsService.getMushrooms().subscribe((mushrooms) => {
@@ -172,11 +173,6 @@ export class HomeComponent implements OnInit {
         for (const control of this.form.controls) {
             control!.options = [...new Set(this.mushrooms.map(m => m[control.selector as keyof Mushroom]).flat())].map(el => ({ value: `${control.selector}_${el}`, label: `home.filters.${control.selector}.${el}` }));
         }
-    }
-
-    private _getRandomSelector() {
-        const number = Math.random() * 100;
-        return 's' + number.toString().split('.')[1];
     }
 
 }

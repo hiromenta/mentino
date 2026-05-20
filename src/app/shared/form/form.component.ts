@@ -16,6 +16,8 @@ export class FormComponent implements AfterViewInit, AfterContentInit {
     radioValue: string = '';
     checkboxValues: string[] = [];
 
+    lastControlChanged?: string;
+
     constructor() {}
 
     ngAfterContentInit(): void {
@@ -59,8 +61,8 @@ export class FormComponent implements AfterViewInit, AfterContentInit {
         return this.checkboxValues.join(',');
     }
 
-    checkboxSelected(value: string | number) {
-        return this.checkboxValues.includes(value.toString());
+    checkboxSelected(value: string | number, control: Control) {
+        return this.checkboxValues.includes(value.toString()) || control.value === value;
     }
 
     getControlType() {
@@ -74,6 +76,8 @@ export class FormComponent implements AfterViewInit, AfterContentInit {
         selectedControl!.state = input?.validity;
         selectedControl!.valid = selectedControl!.state?.valid;
 
+        this.lastControlChanged = control.selector;
+
         this._updateFormValueAndValidity();
     }
 
@@ -85,9 +89,10 @@ export class FormComponent implements AfterViewInit, AfterContentInit {
         }
 
         this.form!.value = value;
+        this.form!.lastControlChanged = this.lastControlChanged;
 
         for (const control of (this.form?.controls || [])) {
-            if (!control.valid) {
+            if (!control.valid && ![ControlType.TITLE, ControlType.SPACER].includes(control.type)) {
                 this.form!.valid = false;
                 return;
             }

@@ -17,7 +17,7 @@
     margin-right: 1rem;
     padding: 1rem;
     border: 5px solid var(--secondary);
-    background-color: var(--accent-light);
+    background-color: var(--accentLight);
 }
 
 .mushrooms {
@@ -27,22 +27,18 @@
     gap: 1rem;
     flex-wrap: wrap;
     margin-top: 1rem;
-    width: 75%;
-
-    &.reduced {
-        width: 40%;
-    }
+    flex: 1;
 }
 
 .mushroom {
     width: 30%;
-    max-width: 9rem;
+    width: 9rem;
     height: 10rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
-    background-color: var(--accent-light);
+    background-color: var(--accentLight);
 
     &.E {
         border: 5px solid var(--success);
@@ -84,7 +80,7 @@
     width: 35%;
     max-width: 25rem;
     border: 5px solid var(--secondary);
-    background-color: var(--accent-light);
+    background-color: var(--accentLight);
     position: relative;
 }
 
@@ -147,6 +143,8 @@
 .message {
     position: absolute;
     bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    width: 100%;
+    width: 80%;
 }

@@ -1,17 +1,23 @@
 {
-    "language": {
-        "title": "Language",
-        "languages": {
-            "english": "English",
-            "italian": "Italian"
-        }
-    },
-    "theme": {
-        "title": "Theme",
-        "themes": {
-            "light": "Light",
-            "dark": "Dark",
-            "custom": "Custom"
+    "setting": {
+        "language": {
+            "title": "Language",
+            "languages": {
+                "english": "English",
+                "italian": "Italian"
+            }
+        },
+        "options": {
+            "title": "Options",
+            "fullscreen": "Fullscreen"
+        },
+        "theme": {
+            "title": "Theme",
+            "themes": {
+                "light": "Light",
+                "dark": "Dark",
+                "custom": "Custom"
+            }
         }
     },
     "home": {

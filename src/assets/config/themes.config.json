@@ -3,7 +3,7 @@
         "primary": "#2d5128",
         "secondary": "#537b2f",
         "accent": "#8da750",
-        "accent-light": "#f2eeca",
+        "accentLight": "#f2eeca",
         "light": "#e4eb9c",
         "dark": "#142c14",
         "background": "url('/assets/images/leaves_light.jpg')"
@@ -12,7 +12,7 @@
         "primary": "#0e361c",
         "secondary": "#19541f",
         "accent": "#446c48",
-        "accent-light": "#8a9f71",
+        "accentLight": "#8a9f71",
         "light": "#7c9060",
         "dark": "#042514",
         "background": "url('/assets/images/leaves_dark.jpg')"
