@@ -21,7 +21,11 @@
 
         <div class="detail-name">{{ mushroom.name | titlecase }}</div>
 
-        <div class="tag" [class]="mushroom.safety">{{ 'home.detail.tags.' + mushroom.safety | translate }}<span *ngIf="mushroom.cookingTime">{{ mushroom.cookingTime }}m</span></div>
+        <div class="tag" [class]="mushroom.safety">
+            {{ ('home.detail.tags.' + mushroom.safety) | translate }}
+            <span *ngIf="mushroom.extra">{{ ('home.detail.extra.' + mushroom.extra) | translate }}</span>
+            <span *ngIf="mushroom.cookingTime">{{ mushroom.cookingTime }}m</span>
+        </div>
 
         <div class="detail-imgs">
             <div class="detail-img">
@@ -33,7 +37,16 @@
             </div>
         </div>
 
-        <div class="wiki"><a target="_blank" [href]="mushroom.wikipedia">Wikipedia</a></div>
+        <div class="detail-info">
+            <ng-container *ngFor="let prop of details">
+                <div [class]="prop" *ngIf="getSanifiedValue(mushroom[prop]).length">
+                    <span class="label">{{ 'home.filters.' + prop + '.title' | translate }}:&nbsp;</span>
+                    <span *ngFor="let el of getSanifiedValue(mushroom[prop]); last as last$">{{ ('home.filters.' + prop + '.' + el) | translate }}<span *ngIf="!last$">,&nbsp;</span></span>
+                </div>
+            </ng-container>
+        </div>
+
+        <div class="wiki">{{ 'home.wikipedia' | translate }}<a target="_blank" [href]="mushroom.wikipedia">Wikipedia</a></div>
     </div>
 </div>
 

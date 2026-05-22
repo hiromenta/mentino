@@ -86,7 +86,9 @@
                 "pine": "Pino",
                 "larch": "Larice",
                 "beech": "Faggio",
-                "oak": "Quercia"
+                "oak": "Quercia",
+                "chestnut_tree": "Castagno",
+                "silver_fir": "Abete bianco"
             },
             "flesh": {
                 "title": "Carne",
@@ -103,13 +105,16 @@
         "detail": {
             "tags": {
                 "E": "Commestibile",
-                "EB": "Commestibile ma {{extra}}",
+                "EB": "Commestibile ma ",
                 "I": "Non commestibile",
                 "P": "Velenoso"
             },
-            "extra": {}
+            "extra": {
+                "cook_first": "cuoci per"
+            }
         },
         "alert": "Il metodo utilizzato non è completamente sicuro, non raccogliere funghi che non conosci",
+        "wikipedia": "Vedi di più su ",
         "message": "Manca un fungo? Apri un issue su "
     }
 }

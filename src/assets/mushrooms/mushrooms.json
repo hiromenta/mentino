@@ -22,7 +22,7 @@
         "hymenium": "free",
         "stipe": "ring_volva",
         "spores": "white",
-        "near": [],
+        "near": ["oak", "chestnut_tree", "beech", "norway_spruce", "silver_fir"],
         "flesh": "immutable",
         "safety": "E",
         "wikipedia": "https://www.wikipedia.org/wiki/Amanita_caesarea"

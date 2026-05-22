@@ -96,6 +96,7 @@ export class HomeComponent implements OnInit {
             }
         ]
     };
+    details: (keyof Mushroom)[] = ['capColors', 'fleshColors', 'hymeniumStructure', 'cap', 'hymenium', 'stipe', 'spores', 'near', 'flesh'];
 
     constructor(private _mushroomsService: MushroomsService, private _utilsService: UtilsService) {}
 
@@ -104,6 +105,18 @@ export class HomeComponent implements OnInit {
             this.mushrooms = mushrooms;
             this._buildFilters();
         });
+    }
+
+    getSanifiedValue(value?: string | string[] | number) {
+        if (!value) {
+            return [];
+        }
+
+        if (['string', 'number'].includes(typeof value)) {
+            return [value.toString()];
+        }
+
+        return value as string[];
     }
 
     getMushrooms() {

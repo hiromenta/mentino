@@ -1,5 +1,5 @@
 {
-    "setting": {
+    "settings": {
         "language": {
             "title": "Language",
             "languages": {
@@ -17,6 +17,15 @@
                 "light": "Light",
                 "dark": "Dark",
                 "custom": "Custom"
+            },
+            "colors": {
+                "primary": "Primary color",
+                "secondary": "Secondary color",
+                "accent": "Accent color (normal)",
+                "accentLight": "Accent color (light)",
+                "light": "Light color",
+                "dark": "Dark color",
+                "background": "URL background image"
             }
         }
     },
@@ -77,7 +86,9 @@
                 "pine": "Pine",
                 "larch": "Larch",
                 "beech": "Beech",
-                "oak": "Oak"
+                "oak": "Oak",
+                "chestnut_tree": "Chestnut tree",
+                "silver_fir": "Silver fir"
             },
             "flesh": {
                 "title": "Flesh",
@@ -94,13 +105,16 @@
         "detail": {
             "tags": {
                 "E": "Edible",
-                "EB": "Edible after {{extra}}",
+                "EB": "Edible but ",
                 "I": "Inedible",
                 "P": "Poisonous"
             },
-            "extra": {}
+            "extra": {
+                "cook_first": "cook for "
+            }
         },
         "alert": "The method used is not completely safe, do not pick up mushrooms you don't know",
+        "wikipedia": "See more on ",
         "message": "Missing a mushroom? Open an issue on "
     }
 }
