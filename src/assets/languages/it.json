@@ -45,8 +45,8 @@
                 "grey": "Grigio",
                 "green": "Verde"
             },
-            "fleshColors": {
-                "title": "Colore carne",
+            "stipeColors": {
+                "title": "Colore gambo",
                 "red": "Rossa",
                 "orange": "Arancione",
                 "brown": "Marrone",

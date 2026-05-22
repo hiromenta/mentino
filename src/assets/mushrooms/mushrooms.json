@@ -2,7 +2,7 @@
     {
         "name": "amanita muscaria",
         "capColors": ["red", "orange", "yellow"],
-        "fleshColors": ["white"],
+        "stipeColors": ["white"],
         "hymeniumStructure": "gills",
         "cap": ["convex", "flat"],
         "hymenium": "free",
@@ -18,7 +18,7 @@
     {
         "name": "amanita caesarea",
         "capColors": ["orange", "yellow"],
-        "fleshColors": ["yellow"],
+        "stipeColors": ["yellow"],
         "hymeniumStructure": "gills",
         "cap": ["semispherical", "convex"],
         "hymenium": "free",
@@ -34,7 +34,7 @@
     {
         "name": "amanita phalloides",
         "capColors": ["grey", "yellow", "green", "brown", "white"],
-        "fleshColors": ["white"],
+        "stipeColors": ["white"],
         "hymeniumStructure": "gills",
         "cap": ["convex", "flat"],
         "hymenium": "free",

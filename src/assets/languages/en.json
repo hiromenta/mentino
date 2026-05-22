@@ -45,8 +45,8 @@
                 "grey": "Grey",
                 "green": "Green"
             },
-            "fleshColors": {
-                "title": "Flesh color",
+            "stipeColors": {
+                "title": "Stipe color",
                 "red": "Red",
                 "orange": "Orange",
                 "brown": "Brown",

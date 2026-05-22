@@ -1,7 +1,7 @@
 export interface Mushroom {
     name: string;
     capColors: string | string[];
-    fleshColors: string | string[];
+    stipeColors: string | string[];
     hymeniumStructure: string;
     cap: string | string[];
     hymenium: string | string[];

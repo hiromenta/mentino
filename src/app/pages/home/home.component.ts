@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
 
     details: (keyof Mushroom)[] = [
         'capColors',
-        'fleshColors',
+        'stipeColors',
         'hymeniumStructure',
         'cap',
         'hymenium',

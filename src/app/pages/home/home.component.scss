@@ -155,10 +155,12 @@
 }
 
 .detail-info {
+    margin: 1rem 0;
+
     div {
-        margin: 1rem 0;
         display: flex;
         flex-wrap: wrap;
+        margin-bottom: 0.25rem;
 
         span.label {
             font-weight: bold;
@@ -168,7 +170,7 @@
 }
 
 .wiki {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .message {
