@@ -1,7 +1,7 @@
 {
     "light": {
         "primary": "#2d5128",
-        "secondary": "#537b2f",
+        "secondary": "#d5eb7b",
         "accent": "#8da750",
         "accentLight": "#f2eeca",
         "light": "#e4eb9c",
@@ -10,10 +10,10 @@
     },
     "dark": {
         "primary": "#0e361c",
-        "secondary": "#19541f",
+        "secondary": "#7c9060",
         "accent": "#446c48",
-        "accentLight": "#8a9f71",
-        "light": "#7c9060",
+        "accentLight": "#9fbc8d",
+        "light": "#c6caab",
         "dark": "#042514",
         "background": "url('/assets/images/leaves_dark.jpg')"
     }

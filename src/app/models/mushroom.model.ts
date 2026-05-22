@@ -7,11 +7,12 @@ export interface Mushroom {
     hymenium: string | string[];
     stipe: string | string[];
     spores: string | string[];
-    trees: string | string[];
+    near: string | string[];
     flesh: string | string[];
     safety: Safety;
     wikipedia: string;
     cookingTime?: number;
+    extra?: string;
 }
 
 export type Safety = 'E' | 'EB' | 'I' | 'P';

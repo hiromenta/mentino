@@ -5,10 +5,10 @@
     --white: #e7e7e7;
     --black: #111;
     --primary: #0e361c;
-    --secondary: #19541f;
+    --secondary: #7c9060;
     --accent: #446c48;
-    --accentLight: #8a9f71;
-    --light: #7c9060;
+    --accentLight: #9fbc8d;
+    --light: #c6caab;
     --dark: #042514;
     --danger: #721f2a;
     --success: #3d612e;
@@ -45,7 +45,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    background-color: var(--white);
+    background-color: var(--light);
     color: var(--black);
     background-image: var(--background);
     background-size: cover;

@@ -70,8 +70,8 @@
                 "white": "White",
                 "yellow": "Yellow"
             },
-            "trees": {
-                "title": "Trees",
+            "near": {
+                "title": "Near",
                 "birch": "Birch",
                 "norway_spruce": "Norway spruce",
                 "pine": "Pine",
@@ -86,7 +86,7 @@
             "safety": {
                 "title": "Safety",
                 "E": "Edible",
-                "EB": "Edible after cooking",
+                "EB": "Edible after preparation",
                 "I": "Inedible",
                 "P": "Poisonous"
             }
@@ -94,10 +94,11 @@
         "detail": {
             "tags": {
                 "E": "Edible",
-                "EB": "Edible after cooking for ",
+                "EB": "Edible after {{extra}}",
                 "I": "Inedible",
                 "P": "Poisonous"
-            }
+            },
+            "extra": {}
         },
         "alert": "The method used is not completely safe, do not pick up mushrooms you don't know",
         "message": "Missing a mushroom? Open an issue on "

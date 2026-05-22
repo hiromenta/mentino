@@ -68,9 +68,9 @@ export class HomeComponent implements OnInit {
                 options: []
             },
             { type: ControlType.SPACER, selector: this._utilsService.getRandomSelector() },
-            { type: ControlType.TITLE, selector: 'home.filters.trees.title' },
+            { type: ControlType.TITLE, selector: 'home.filters.near.title' },
             {
-                selector: 'trees',
+                selector: 'near',
                 type: ControlType.RADIO,
                 options: []
             },
@@ -111,7 +111,7 @@ export class HomeComponent implements OnInit {
             return [];
         }
 
-        const { capColors, fleshColors, hymeniumStructure, cap, hymenium, stipe, spores, trees, flesh, safety } = this.form.value;
+        const { capColors, fleshColors, hymeniumStructure, cap, hymenium, stipe, spores, near, flesh, safety } = this.form.value;
 
         return this.mushrooms
             .filter(m => !this._buildFiltersArray(capColors)?.length || this._hasProperty(m.capColors, this._buildFiltersArray(capColors)))
@@ -121,7 +121,7 @@ export class HomeComponent implements OnInit {
             .filter(m => !this._buildFiltersArray(hymenium)?.length || this._hasProperty(m.hymenium, this._buildFiltersArray(hymenium)))
             .filter(m => !this._buildFiltersArray(stipe)?.length || this._hasProperty(m.stipe, this._buildFiltersArray(stipe)))
             .filter(m => !this._buildFiltersArray(spores)?.length || this._hasProperty(m.spores, this._buildFiltersArray(spores)))
-            .filter(m => !this._buildFiltersArray(trees)?.length || this._hasProperty(m.trees, this._buildFiltersArray(trees)))
+            .filter(m => !this._buildFiltersArray(near)?.length || this._hasProperty(m.near, this._buildFiltersArray(near)))
             .filter(m => !this._buildFiltersArray(flesh)?.length || this._hasProperty(m.flesh, this._buildFiltersArray(flesh)))
             .filter(m => !this._buildFiltersArray(safety)?.length || this._hasProperty(m.safety, this._buildFiltersArray(safety)));
     }

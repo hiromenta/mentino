@@ -79,8 +79,8 @@
                 "white": "Bianche",
                 "yellow": "Gialle"
             },
-            "trees": {
-                "title": "Alberi",
+            "near": {
+                "title": "Vicino a",
                 "birch": "Betulla",
                 "norway_spruce": "Abete rosso",
                 "pine": "Pino",
@@ -95,7 +95,7 @@
             "safety": {
                 "title": "Commestibilità",
                 "E": "Commestibile",
-                "EB": "Commestibile previa cottura",
+                "EB": "Commestibile previa preparazione",
                 "I": "Non commestibile",
                 "P": "Velenoso"
             }
@@ -103,10 +103,11 @@
         "detail": {
             "tags": {
                 "E": "Commestibile",
-                "EB": "Commestibile ma cuocere per ",
+                "EB": "Commestibile ma {{extra}}",
                 "I": "Non commestibile",
                 "P": "Velenoso"
-            }
+            },
+            "extra": {}
         },
         "alert": "Il metodo utilizzato non è completamente sicuro, non raccogliere funghi che non conosci",
         "message": "Manca un fungo? Apri un issue su "

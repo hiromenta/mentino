@@ -8,7 +8,7 @@
         "hymenium": "free",
         "stipe": "ring_volva",
         "spores": "white",
-        "trees": ["birch", "norway_spruce", "pine", "larch", "beech", "oak"],
+        "near": ["birch", "norway_spruce", "pine", "larch", "beech", "oak"],
         "flesh": "immutable",
         "safety": "P",
         "wikipedia": "https://www.wikipedia.org/wiki/Amanita_muscaria"
@@ -22,7 +22,7 @@
         "hymenium": "free",
         "stipe": "ring_volva",
         "spores": "white",
-        "trees": [],
+        "near": [],
         "flesh": "immutable",
         "safety": "E",
         "wikipedia": "https://www.wikipedia.org/wiki/Amanita_caesarea"

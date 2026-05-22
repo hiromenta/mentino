@@ -11,9 +11,9 @@ export class ThemesService {
 
     defaults = {
         primary: '#6f766f',
-        secondary: '#a7b4a8',
+        secondary: '#d5e2d6',
         accent: '#567656',
-        accentLight: '#95b298',
+        accentLight: '#bbddbe',
         light: '#dbded9',
         dark: '#292929',
         background: ''
