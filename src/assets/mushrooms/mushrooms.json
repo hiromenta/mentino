@@ -10,6 +10,8 @@
         "spores": "white",
         "near": ["birch", "norway_spruce", "pine", "larch", "beech", "oak"],
         "flesh": "immutable",
+        "smell": "neutral",
+        "taste": "sweetish",
         "safety": "P",
         "wikipedia": "https://www.wikipedia.org/wiki/Amanita_muscaria"
     },
@@ -24,7 +26,25 @@
         "spores": "white",
         "near": ["oak", "chestnut_tree", "beech", "norway_spruce", "silver_fir"],
         "flesh": "immutable",
+        "smell": "neutral",
+        "taste": "sweet",
         "safety": "E",
         "wikipedia": "https://www.wikipedia.org/wiki/Amanita_caesarea"
+    },
+    {
+        "name": "amanita phalloides",
+        "capColors": ["grey", "yellow", "green", "brown", "white"],
+        "fleshColors": ["white"],
+        "hymeniumStructure": "gills",
+        "cap": ["convex", "flat"],
+        "hymenium": "free",
+        "stipe": "ring_volva",
+        "spores": "white",
+        "near": ["oak", "beech"],
+        "flesh": "immutable",
+        "smell": ["neutral", "honey"],
+        "taste": ["neutral", "nutty"],
+        "safety": "D",
+        "wikipedia": "https://www.wikipedia.org/wiki/Amanita_phalloides"
     }
 ]

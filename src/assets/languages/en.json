@@ -41,7 +41,9 @@
                 "orange": "Orange",
                 "brown": "Brown",
                 "white": "White",
-                "yellow": "Yellow"
+                "yellow": "Yellow",
+                "grey": "Grey",
+                "green": "Green"
             },
             "fleshColors": {
                 "title": "Flesh color",
@@ -94,12 +96,25 @@
                 "title": "Flesh",
                 "immutable": "Immutable"
             },
+            "smell": {
+                "title": "Smell",
+                "neutral": "Neutral",
+                "honey": "Honey"
+            },
+            "taste": {
+                "title": "Taste",
+                "sweetish": "Sweetish",
+                "sweet": "Sweet",
+                "neutral": "Neutral",
+                "nutty": "Nutty"
+            },
             "safety": {
                 "title": "Safety",
                 "E": "Edible",
                 "EB": "Edible after preparation",
                 "I": "Inedible",
-                "P": "Poisonous"
+                "P": "Poisonous",
+                "D": "Deadly"
             }
         },
         "detail": {
@@ -107,7 +122,8 @@
                 "E": "Edible",
                 "EB": "Edible but ",
                 "I": "Inedible",
-                "P": "Poisonous"
+                "P": "Poisonous",
+                "D": "Deadly"
             },
             "extra": {
                 "cook_first": "cook for "

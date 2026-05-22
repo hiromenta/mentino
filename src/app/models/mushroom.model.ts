@@ -9,6 +9,9 @@ export interface Mushroom {
     spores: string | string[];
     near: string | string[];
     flesh: string | string[];
+    smell: string | string[];
+    taste: string | string[];
+    peculiarity?: string | string[];
     safety: Safety;
     wikipedia: string;
     cookingTime?: number;

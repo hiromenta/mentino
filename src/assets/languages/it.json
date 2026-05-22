@@ -41,7 +41,9 @@
                 "orange": "Arancione",
                 "brown": "Marrone",
                 "white": "Bianco",
-                "yellow": "Giallo"
+                "yellow": "Giallo",
+                "grey": "Grigio",
+                "green": "Verde"
             },
             "fleshColors": {
                 "title": "Colore carne",
@@ -94,12 +96,25 @@
                 "title": "Carne",
                 "immutable": "Immutabile"
             },
+            "smell": {
+                "title": "Odore",
+                "neutral": "Neutrale",
+                "honey": "Miele"
+            },
+            "taste": {
+                "title": "Sapore",
+                "sweetish": "Dolciastro",
+                "sweet": "Dolce",
+                "neutral": "Neutrale",
+                "nutty": "Nocciolato"
+            },
             "safety": {
                 "title": "Commestibilità",
                 "E": "Commestibile",
                 "EB": "Commestibile previa preparazione",
                 "I": "Non commestibile",
-                "P": "Velenoso"
+                "P": "Velenoso",
+                "D": "Mortale"
             }
         },
         "detail": {
@@ -107,7 +122,8 @@
                 "E": "Commestibile",
                 "EB": "Commestibile ma ",
                 "I": "Non commestibile",
-                "P": "Velenoso"
+                "P": "Velenoso",
+                "D": "Mortale"
             },
             "extra": {
                 "cook_first": "cuoci per"

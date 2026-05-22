@@ -32,7 +32,7 @@
 
 .mushroom {
     width: 30%;
-    width: 9rem;
+    width: 8rem;
     height: 10rem;
     display: flex;
     flex-direction: column;
@@ -50,6 +50,9 @@
         border: 5px solid var(--warning);
     }
     &.I {
+        border: 5px solid var(--grey);
+    }
+    &.D {
         border: 5px solid var(--black);
     }
 }
@@ -118,6 +121,9 @@
         background-color: var(--warning);
     }
     &.I {
+        background-color: var(--grey);
+    }
+    &.D {
         background-color: var(--black);
     }
 }
@@ -127,18 +133,23 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    width: 100%;
     max-height: 15rem;
     overflow: hidden;
 
     img {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     &.half {
-        max-height: 7.5rem;
+        height: 7.5rem;
 
         img {
             width: 50%;
+            height: 100%;
+            object-fit: cover;
         }
     }
 }
@@ -146,11 +157,18 @@
 .detail-info {
     div {
         margin: 1rem 0;
+        display: flex;
+        flex-wrap: wrap;
 
         span.label {
             font-weight: bold;
+            white-space: nowrap;
         }
     }
+}
+
+.wiki {
+    margin-top: 2rem;
 }
 
 .message {
