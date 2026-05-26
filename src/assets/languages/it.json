@@ -125,7 +125,9 @@
                 "spruce": "Peccio",
                 "cork_oak": "Sughera",
                 "holm_oak": "Leccio",
-                "hazel_tree": "Nocciolo"
+                "hazel_tree": "Nocciolo",
+                "poplar": "Pioppo",
+                "willow": "Salice"
             },
             "flesh": {
                 "title": "Carne",

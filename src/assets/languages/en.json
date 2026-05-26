@@ -125,7 +125,9 @@
                 "spruce": "Spruce",
                 "cork_oak": "Cork oak",
                 "holm_oak": "Holm oak",
-                "hazel_tree": "Hazel tree"
+                "hazel_tree": "Hazel tree",
+                "poplar": "Poplar",
+                "willow": "Willow"
             },
             "flesh": {
                 "title": "Flesh",

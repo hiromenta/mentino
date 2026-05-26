@@ -140,7 +140,7 @@
         "hymenium": ["free"],
         "stipe": "volva",
         "spores": "white",
-        "near": ["birch", "beech", "oak", "chestnut_tree"],
+        "near": ["birch", "beech", "oak", "chestnut_tree", "poplar", "willow"],
         "flesh": "immutable",
         "smell": ["mild", "aromatic"],
         "taste": ["sweet", "mild"],
