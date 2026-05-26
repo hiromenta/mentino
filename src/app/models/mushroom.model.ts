@@ -1,21 +1,26 @@
+type stringish = string | string[];
+
 export interface Mushroom {
     name: string;
-    capColors: string | string[];
-    stipeColors: string | string[];
+    capColors: stringish;
+    capMargin: stringish;
+    stipeColors: stringish;
     hymeniumStructure: string;
-    cap: string | string[];
-    hymenium: string | string[];
-    stipe: string | string[];
-    spores: string | string[];
-    near: string | string[];
-    flesh: string | string[];
-    smell: string | string[];
-    taste: string | string[];
-    peculiarity?: string | string[];
+    hymeniumColors: stringish;
+    cap: stringish;
+    hymenium: stringish;
+    stipe: stringish;
+    spores: stringish;
+    near: stringish;
+    flesh: stringish;
+    smell: stringish;
+    taste: stringish;
     safety: Safety;
-    wikipedia: string;
-    cookingTime?: number;
     extra?: string;
+    cookingTime?: number;
+    info?: string;
+    peculiarity?: stringish;
+    wikipedia: string;
 }
 
 export type Safety = 'E' | 'EB' | 'I' | 'P';

@@ -11,7 +11,7 @@
         <div *ngIf="control.type === getControlType().RADIO">
             <input #radioInput type="hidden" [required]="control.required" [id]="control.selector" [value]="control.defaultValue || ''">
             <ng-container *ngFor="let option of control.options">
-                <div (click)="radioInput.value = toggleRadio(option.value); updateValue(control, radioInput)" class="radioCheckElement" [class.selected]="control.value === option.value">
+                <div (click)="radioInput.value = toggleRadio(control, option.value); updateValue(control, radioInput)" class="radioCheckElement" [class.selected]="control.value === option.value">
                     <ng-container *ngTemplateOutlet="radioTemplate"></ng-container>
                     <span>{{ option.label | translate }}</span>
                 </div>

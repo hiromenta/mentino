@@ -22,9 +22,14 @@
         <div class="detail-name">{{ mushroom.name | titlecase }}</div>
 
         <div class="tag" [class]="mushroom.safety">
-            {{ ('home.detail.tags.' + mushroom.safety) | translate }}
-            <span *ngIf="mushroom.extra">{{ ('home.detail.extra.' + mushroom.extra) | translate }}</span>
-            <span *ngIf="mushroom.cookingTime">{{ mushroom.cookingTime }}m</span>
+            <div>
+                {{ ('home.detail.tags.' + mushroom.safety) | translate }}
+                <span *ngIf="mushroom.extra">{{ ('home.detail.extra.' + mushroom.extra) | translate }}</span>
+                <span *ngIf="mushroom.cookingTime">{{ mushroom.cookingTime }}m</span>
+            </div>
+            <div class="extra-info" *ngIf="mushroom.info">
+                {{ 'home.detail.info.' + mushroom.info | translate }}
+            </div>
         </div>
 
         <div class="detail-imgs">
@@ -38,6 +43,11 @@
         </div>
 
         <div class="detail-info">
+            <div class="peculiarity" *ngIf="getSanifiedValue(mushroom.peculiarity).length">
+                <span class="label">{{ 'home.filters.peculiarity.title' | translate }}:&nbsp;</span>
+                <span *ngFor="let el of getSanifiedValue(mushroom.peculiarity); last as last$">{{ ('home.filters.peculiarity.' + el) | translate }}<span *ngIf="!last$">,&nbsp;</span></span>
+            </div>
+
             <ng-container *ngFor="let prop of details">
                 <div [class]="prop" *ngIf="getSanifiedValue(mushroom[prop]).length">
                     <span class="label">{{ 'home.filters.' + prop + '.title' | translate }}:&nbsp;</span>

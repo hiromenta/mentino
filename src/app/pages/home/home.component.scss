@@ -31,8 +31,7 @@
 }
 
 .mushroom {
-    width: 30%;
-    width: 8rem;
+    width: 7.9rem;
     height: 10rem;
     display: flex;
     flex-direction: column;
@@ -47,13 +46,16 @@
         border: 5px solid var(--danger);
     }
     &.EB {
-        border: 5px solid var(--warning);
+        border: 5px solid var(--caution);
     }
     &.I {
         border: 5px solid var(--grey);
     }
     &.D {
         border: 5px solid var(--black);
+    }
+    &.NR {
+        border: 5px solid var(--warning);
     }
 }
 
@@ -118,13 +120,21 @@
         background-color: var(--danger);
     }
     &.EB {
-        background-color: var(--warning);
+        background-color: var(--caution);
     }
     &.I {
         background-color: var(--grey);
     }
     &.D {
         background-color: var(--black);
+    }
+    &.NR {
+        background-color: var(--warning);
+    }
+
+    .extra-info {
+        font-size: 0.75rem;
+        font-style: italic;
     }
 }
 
@@ -165,6 +175,13 @@
         span.label {
             font-weight: bold;
             white-space: nowrap;
+        }
+
+        &.peculiarity {
+            background-color: var(--violet);
+            border-radius: 5px;
+            padding: 0.25rem 0.5rem;
+            margin-bottom: 1rem;
         }
     }
 }

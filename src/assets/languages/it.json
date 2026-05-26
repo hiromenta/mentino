@@ -35,6 +35,11 @@
             "settings": "Impostazioni"
         },
         "filters": {
+            "peculiarity": {
+                "title": "Peculiarità",
+                "amanita_crocea": "Gambo con squame cotonose",
+                "amanita_vaginata": "Gambo spesso rivestito da fiocchi concolori al cappello"
+            },
             "capColors": {
                 "title": "Colore cappello",
                 "red": "Rosso",
@@ -43,29 +48,54 @@
                 "white": "Bianco",
                 "yellow": "Giallo",
                 "grey": "Grigio",
-                "green": "Verde"
+                "green": "Verde",
+                "ocre": "Ocra",
+                "apricot": "Albicocca",
+                "silver": "Argenteo"
+            },
+            "capMargin": {
+                "title": "Margine cappello",
+                "striate": "Pettinato",
+                "inrolled": "Involuto"
             },
             "stipeColors": {
                 "title": "Colore gambo",
-                "red": "Rossa",
+                "red": "Rosso",
                 "orange": "Arancione",
                 "brown": "Marrone",
-                "white": "Bianca",
-                "yellow": "Gialla"
+                "white": "Bianco",
+                "yellow": "Giallo",
+                "beige": "Beige",
+                "apricot": "Albicocca"
             },
             "hymeniumStructure": {
                 "title": "Struttura imenio",
                 "gills": "Lamelle"
             },
+            "hymeniumColors": {
+                "title": "Colore imenio",
+                "pink": "Rosa",
+                "white": "Bianco",
+                "yellow": "Giallo",
+                "cream": "Crema"
+            },
             "cap": {
                 "title": "Cappello",
                 "convex": "Convesso",
                 "flat": "Piatto",
-                "semispherical": "Semisferico"
+                "semispherical": "Semisferico",
+                "conical": "Conico",
+                "bell_shaped": "Campanulato",
+                "umbonate": "Umbonato",
+                "ovate": "Ovoidale"
             },
             "hymenium": {
                 "title": "Imenio",
-                "free": "Libero"
+                "free": "Libero",
+                "decurrent": "Decorrenti",
+                "distant": "Distanti",
+                "adnexed": "Debolmente adnate",
+                "adnate": "Adnate"
             },
             "stipe": {
                 "title": "Gambo",
@@ -90,7 +120,12 @@
                 "beech": "Faggio",
                 "oak": "Quercia",
                 "chestnut_tree": "Castagno",
-                "silver_fir": "Abete bianco"
+                "silver_fir": "Abete bianco",
+                "fir": "Abete",
+                "spruce": "Peccio",
+                "cork_oak": "Sughera",
+                "holm_oak": "Leccio",
+                "hazel_tree": "Nocciolo"
             },
             "flesh": {
                 "title": "Carne",
@@ -99,14 +134,18 @@
             "smell": {
                 "title": "Odore",
                 "neutral": "Neutrale",
-                "honey": "Miele"
+                "honey": "Miele",
+                "mild": "Delicato",
+                "boiled_egg": "Uovo sodo",
+                "aromatic": "Aromatico"
             },
             "taste": {
                 "title": "Sapore",
                 "sweetish": "Dolciastro",
                 "sweet": "Dolce",
                 "neutral": "Neutrale",
-                "nutty": "Nocciolato"
+                "nutty": "Nocciolato",
+                "mild": "Delicato"
             },
             "safety": {
                 "title": "Commestibilità",
@@ -114,19 +153,24 @@
                 "EB": "Commestibile previa preparazione",
                 "I": "Non commestibile",
                 "P": "Velenoso",
-                "D": "Mortale"
+                "D": "Mortale",
+                "NR": "Sconsigliato"
             }
         },
         "detail": {
             "tags": {
                 "E": "Commestibile",
-                "EB": "Commestibile ma ",
+                "EB": "Commestibile - ",
                 "I": "Non commestibile",
                 "P": "Velenoso",
-                "D": "Mortale"
+                "D": "Mortale",
+                "NR": "Sconsigliato"
             },
             "extra": {
-                "cook_first": "cuoci per"
+                "cook_first": "cuoci per "
+            },
+            "info": {
+                "amanita_gemmata": "Può essere comestibile, ma in piccole quantità ed evitando il consumo di alcol"
             }
         },
         "alert": "Il metodo utilizzato non è completamente sicuro, non raccogliere funghi che non conosci",

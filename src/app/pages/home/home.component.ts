@@ -19,8 +19,10 @@ export class HomeComponent implements OnInit {
 
     details: (keyof Mushroom)[] = [
         'capColors',
+        'capMargin',
         'stipeColors',
         'hymeniumStructure',
+        'hymeniumColors',
         'cap',
         'hymenium',
         'stipe',
@@ -137,13 +139,14 @@ export class HomeComponent implements OnInit {
     }
 
     getImgName(name: string) {
-        const folderName = name.replaceAll(' ', '');
-        return `${folderName}/${folderName}`;
+        const mushroomName = name.replaceAll(' ', '');
+        const folderName = name.split(' ')[0];
+        return `${folderName}/${mushroomName}/${mushroomName}`;
     }
 
     private _buildFilters() {
         for (const control of this.form.controls) {
-            control!.options = [...new Set(this.mushrooms.map(m => m[control.selector as keyof Mushroom]).flat())].map(el => ({ value: `${control.selector}_${el}`, label: `home.filters.${control.selector}.${el}` }));
+            control!.options = [...new Set(this.mushrooms.map(m => m[control.selector as keyof Mushroom]).flat())]?.filter(el => !!el)?.map(el => ({ value: `${control.selector}_${el}`, label: `home.filters.${control.selector}.${el}` }));
         }
     }
 

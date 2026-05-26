@@ -35,6 +35,11 @@
             "settings": "Settings"
         },
         "filters": {
+            "peculiarity": {
+                "title": "Peculiarity",
+                "amanita_crocea": "Stipe decorated with paler fibrils in a \"flame\" pattern",
+                "amanita_vaginata": "The stem surface is covered with a finely powdered bloom"
+            },
             "capColors": {
                 "title": "Cap color",
                 "red": "Red",
@@ -43,7 +48,15 @@
                 "white": "White",
                 "yellow": "Yellow",
                 "grey": "Grey",
-                "green": "Green"
+                "green": "Green",
+                "ocre": "Ocre",
+                "apricot": "Apricot",
+                "silver": "Silver"
+            },
+            "capMargin": {
+                "title": "Cap margin",
+                "striate": "Striate",
+                "inrolled": "Inrolled"
             },
             "stipeColors": {
                 "title": "Stipe color",
@@ -51,21 +64,38 @@
                 "orange": "Orange",
                 "brown": "Brown",
                 "white": "White",
-                "yellow": "Yellow"
+                "yellow": "Yellow",
+                "beige": "Beige",
+                "apricot": "Apricot"
             },
             "hymeniumStructure": {
                 "title": "Hymenium structure",
                 "gills": "Gills"
             },
+            "hymeniumColors": {
+                "title": "Hymenium colors",
+                "pink": "Pink",
+                "white": "White",
+                "yellow": "Yellow",
+                "cream": "Cream"
+            },
             "cap": {
                 "title": "Cap",
                 "convex": "Convex",
                 "flat": "Flat",
-                "semispherical": "Semispherical"
+                "semispherical": "Semispherical",
+                "conical": "Conical",
+                "bell_shaped": "Bell-shaped",
+                "umbonate": "Umbonate",
+                "ovate": "Ovate"
             },
             "hymenium": {
                 "title": "Hymenium",
-                "free": "Free"
+                "free": "Free",
+                "decurrent": "Decurrent",
+                "distant": "Distant",
+                "adnexed": "Adnexed",
+                "adnate": "Adnate"
             },
             "stipe": {
                 "title": "Stipe",
@@ -90,7 +120,12 @@
                 "beech": "Beech",
                 "oak": "Oak",
                 "chestnut_tree": "Chestnut tree",
-                "silver_fir": "Silver fir"
+                "silver_fir": "Silver fir",
+                "fir": "Fir",
+                "spruce": "Spruce",
+                "cork_oak": "Cork oak",
+                "holm_oak": "Holm oak",
+                "hazel_tree": "Hazel tree"
             },
             "flesh": {
                 "title": "Flesh",
@@ -99,14 +134,18 @@
             "smell": {
                 "title": "Smell",
                 "neutral": "Neutral",
-                "honey": "Honey"
+                "honey": "Honey",
+                "mild": "Mild",
+                "boiled_egg": "Boiled egg",
+                "aromatic": "Aromatic"
             },
             "taste": {
                 "title": "Taste",
                 "sweetish": "Sweetish",
                 "sweet": "Sweet",
                 "neutral": "Neutral",
-                "nutty": "Nutty"
+                "nutty": "Nutty",
+                "mild": "Mild"
             },
             "safety": {
                 "title": "Safety",
@@ -114,19 +153,24 @@
                 "EB": "Edible after preparation",
                 "I": "Inedible",
                 "P": "Poisonous",
-                "D": "Deadly"
+                "D": "Deadly",
+                "NR": "Not recommended"
             }
         },
         "detail": {
             "tags": {
                 "E": "Edible",
-                "EB": "Edible but ",
+                "EB": "Edible - ",
                 "I": "Inedible",
                 "P": "Poisonous",
-                "D": "Deadly"
+                "D": "Deadly",
+                "NR":"Not recommended"
             },
             "extra": {
                 "cook_first": "cook for "
+            },
+            "info": {
+                "amanita_gemmata": "Could be edible, but in small quantities and without alcohol"
             }
         },
         "alert": "The method used is not completely safe, do not pick up mushrooms you don't know",

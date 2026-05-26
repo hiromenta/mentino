@@ -1,4 +1,4 @@
-import { AfterContentInit, AfterViewInit, Component, EventEmitter, Input, Output } from "@angular/core";
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { Control, ControlType, MyForm } from "../../models/form.model";
 
 @Component({
@@ -7,7 +7,7 @@ import { Control, ControlType, MyForm } from "../../models/form.model";
     styleUrls: ['./form.component.scss'],
     standalone: false
 })
-export class FormComponent implements AfterViewInit, AfterContentInit {
+export class FormComponent implements AfterViewInit, OnInit {
 
     @Input('form') form?: MyForm;
 
@@ -20,8 +20,15 @@ export class FormComponent implements AfterViewInit, AfterContentInit {
 
     constructor() {}
 
-    ngAfterContentInit(): void {
-        // this._updateValueAfterInit();
+    ngOnInit(): void {
+        // const radios = this.form?.controls?.filter(c => c.type === ControlType.RADIO);
+        const checkboxes = this.form?.controls?.filter(c => c.type === ControlType.CHECKBOX);
+
+        for (const control of (checkboxes || [])) {
+            if (control.defaultValue) {
+                this.checkboxValues.push(control.defaultValue);
+            }
+        }
     }
 
     ngAfterViewInit(): void {
@@ -36,10 +43,10 @@ export class FormComponent implements AfterViewInit, AfterContentInit {
         }
     }
 
-    toggleRadio(value: string | number) {
+    toggleRadio(control: Control, value: string | number) {
         const parsedValue = value.toString();
 
-        if (this.radioValue === parsedValue) {
+        if (control.canClear && this.radioValue === parsedValue) {
             this.radioValue = '';
         } else {
             this.radioValue = parsedValue;
