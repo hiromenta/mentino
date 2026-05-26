@@ -3,6 +3,7 @@ import { MushroomsService } from "../../services/mushrooms.service";
 import { Mushroom } from "../../models/mushroom.model";
 import { ControlType, MyForm } from "../../models/form.model";
 import { UtilsService } from "../../services/utils.service";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
     selector: 'my-home',
@@ -37,7 +38,7 @@ export class HomeComponent implements OnInit {
         'safety'
     ];
 
-    constructor(private _mushroomsService: MushroomsService, private _utilsService: UtilsService) {}
+    constructor(private _route: ActivatedRoute, private _mushroomsService: MushroomsService, private _utilsService: UtilsService) {}
 
     ngOnInit(): void {
         this._buildControls();
@@ -45,6 +46,13 @@ export class HomeComponent implements OnInit {
         this._mushroomsService.getMushrooms().subscribe((mushrooms) => {
             this.mushrooms = mushrooms;
             this._buildFilters();
+
+            // const queryMushroom = this._route.snapshot.queryParams['m'].toLowerCase();
+            const queryMushroom = this._route.snapshot.url?.[0]?.path?.toLowerCase();
+
+            if (queryMushroom) {
+                this.mushroom = this.mushrooms.find(m => m.name.replace(' ', '').toLowerCase() === queryMushroom);
+            }
         });
     }
 

@@ -19,6 +19,7 @@ export interface Mushroom {
     extra?: string;
     cookingTime?: number;
     info?: string;
+    warnMessage?: string;
     peculiarity?: stringish;
     wikipedia: string;
 }

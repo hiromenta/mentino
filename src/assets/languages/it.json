@@ -38,7 +38,9 @@
             "peculiarity": {
                 "title": "Peculiarità",
                 "amanita_crocea": "Gambo con squame cotonose",
-                "amanita_vaginata": "Gambo spesso rivestito da fiocchi concolori al cappello"
+                "amanita_vaginata": "Gambo spesso rivestito da fiocchi concolori al cappello",
+                "amanita_rubescens": "Le verruche sul cappello non sono mai bianche",
+                "amanita_franchetii": "Verruche piramidali dal giallo al bruno"
             },
             "capColors": {
                 "title": "Colore cappello",
@@ -51,12 +53,14 @@
                 "green": "Verde",
                 "ocre": "Ocra",
                 "apricot": "Albicocca",
-                "silver": "Argenteo"
+                "silver": "Argenteo",
+                "reddish": "Rossastro"
             },
             "capMargin": {
                 "title": "Margine cappello",
                 "striate": "Pettinato",
-                "inrolled": "Involuto"
+                "inrolled": "Involuto",
+                "smooth": "Liscio"
             },
             "stipeColors": {
                 "title": "Colore gambo",
@@ -66,7 +70,9 @@
                 "white": "Bianco",
                 "yellow": "Giallo",
                 "beige": "Beige",
-                "apricot": "Albicocca"
+                "apricot": "Albicocca",
+                "pink": "Rosa",
+                "yellowish": "Giallastro"
             },
             "hymeniumStructure": {
                 "title": "Struttura imenio",
@@ -94,8 +100,8 @@
                 "free": "Libero",
                 "decurrent": "Decorrenti",
                 "distant": "Distanti",
-                "adnexed": "Debolmente adnate",
-                "adnate": "Adnate"
+                "adnexed": "Debolmente annesso",
+                "adnate": "Annesso"
             },
             "stipe": {
                 "title": "Gambo",
@@ -131,7 +137,8 @@
             },
             "flesh": {
                 "title": "Carne",
-                "immutable": "Immutabile"
+                "unchanging": "Immutabile",
+                "bruising": "Virante"
             },
             "smell": {
                 "title": "Odore",
@@ -139,7 +146,9 @@
                 "honey": "Miele",
                 "mild": "Delicato",
                 "boiled_egg": "Uovo sodo",
-                "aromatic": "Aromatico"
+                "aromatic": "Aromatico",
+                "faint": "Debole",
+                "earthy": "Terroso"
             },
             "taste": {
                 "title": "Sapore",
@@ -147,7 +156,15 @@
                 "sweet": "Dolce",
                 "neutral": "Neutrale",
                 "nutty": "Nocciolato",
-                "mild": "Delicato"
+                "mild": "Mite",
+                "acidic": "Acidulo",
+                "aromatic": "Aromatico",
+                "bad": "Sgradevole",
+                "sour": "Aspro"
+            },
+            "info": {
+                "title": "Info",
+                "amanita_rubescens": "Carne virante al rosso"
             },
             "safety": {
                 "title": "Commestibilità",
@@ -171,7 +188,7 @@
             "extra": {
                 "cook_first": "cuoci per "
             },
-            "info": {
+            "warnMessage": {
                 "amanita_gemmata": "Può essere comestibile, ma in piccole quantità ed evitando il consumo di alcol"
             }
         },

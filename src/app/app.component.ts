@@ -80,8 +80,8 @@ export class AppComponent implements OnInit {
 
     this._loaderService.hide();
 
-    this._router.navigate(['randomBullshitGo'], { skipLocationChange: true }).then(() => {
-      this._router.navigate([...path]);
+    this._router.navigate(['randomBullshitGo'], { skipLocationChange: true, queryParamsHandling: 'preserve' }).then(() => {
+      this._router.navigate([...path], { queryParamsHandling: 'preserve' });
     });
 
     return true;

@@ -38,7 +38,9 @@
             "peculiarity": {
                 "title": "Peculiarity",
                 "amanita_crocea": "Stipe decorated with paler fibrils in a \"flame\" pattern",
-                "amanita_vaginata": "The stem surface is covered with a finely powdered bloom"
+                "amanita_vaginata": "The stem surface is covered with a finely powdered bloom",
+                "amanita_rubescens": "Cap warts are never white",
+                "amanita_franchetii": "Pyramidal cap warts ranging from yellow to brown"
             },
             "capColors": {
                 "title": "Cap color",
@@ -51,12 +53,14 @@
                 "green": "Green",
                 "ocre": "Ocre",
                 "apricot": "Apricot",
-                "silver": "Silver"
+                "silver": "Silver",
+                "reddish": "Reddish"
             },
             "capMargin": {
                 "title": "Cap margin",
                 "striate": "Striate",
-                "inrolled": "Inrolled"
+                "inrolled": "Inrolled",
+                "smooth": "Smooth"
             },
             "stipeColors": {
                 "title": "Stipe color",
@@ -66,7 +70,9 @@
                 "white": "White",
                 "yellow": "Yellow",
                 "beige": "Beige",
-                "apricot": "Apricot"
+                "apricot": "Apricot",
+                "pink": "Pink",
+                "yellowish": "Yellowish"
             },
             "hymeniumStructure": {
                 "title": "Hymenium structure",
@@ -131,7 +137,8 @@
             },
             "flesh": {
                 "title": "Flesh",
-                "immutable": "Immutable"
+                "unchanging": "Unchanging",
+                "bruising": "Bruising"
             },
             "smell": {
                 "title": "Smell",
@@ -139,7 +146,9 @@
                 "honey": "Honey",
                 "mild": "Mild",
                 "boiled_egg": "Boiled egg",
-                "aromatic": "Aromatic"
+                "aromatic": "Aromatic",
+                "faint": "Faint",
+                "earthy": "Earthy"
             },
             "taste": {
                 "title": "Taste",
@@ -147,7 +156,15 @@
                 "sweet": "Sweet",
                 "neutral": "Neutral",
                 "nutty": "Nutty",
-                "mild": "Mild"
+                "mild": "Mild",
+                "acidic": "Acidic",
+                "aromatic": "Aromatic",
+                "bad": "Bad",
+                "sour": "Sour"
+            },
+            "info": {
+                "title": "Info",
+                "amanita_rubescens": "Fesh bruising red"
             },
             "safety": {
                 "title": "Safety",
@@ -171,7 +188,7 @@
             "extra": {
                 "cook_first": "cook for "
             },
-            "info": {
+            "warnMessage": {
                 "amanita_gemmata": "Could be edible, but in small quantities and without alcohol"
             }
         },

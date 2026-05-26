@@ -8,12 +8,16 @@ export enum Paths {
   LOGIN = 'login',
   REGISTER = 'register',
   SETTINGS = 'settings',
-  HOME = ''
+  HOME = '',
+  MUSHROOM = 'm'
 }
 
 const routes: Routes = [
   { path: Paths.SETTINGS, component: SettingsComponent },
-  { path: '', pathMatch: 'full', component: HomeComponent },
+  { path: Paths.HOME, pathMatch: 'full', component: HomeComponent },
+  { path: Paths.MUSHROOM, children: [
+    { path: '**', component: HomeComponent }
+  ]},
   { path: '**', component: NotFoundComponent }
 ];
 
