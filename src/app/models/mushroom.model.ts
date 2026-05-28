@@ -1,26 +1,24 @@
-type stringish = string | string[];
-
 export interface Mushroom {
     name: string;
-    capColors: stringish;
-    capMargin: stringish;
-    stipeColors: stringish;
+    capColors: string[];
+    capMargin: string[];
+    stipeColors: string[];
     hymeniumStructure: string;
-    hymeniumColors: stringish;
-    cap: stringish;
-    hymenium: stringish;
-    stipe: stringish;
-    spores: stringish;
-    near: stringish;
-    flesh: stringish;
-    smell: stringish;
-    taste: stringish;
+    hymeniumColors: string[];
+    cap: string[];
+    hymenium: string[];
+    stipe: string[];
+    spores: string[];
+    near: string[];
+    flesh: string;
+    smell: string[];
+    taste: string[];
     safety: Safety;
     extra?: string;
     cookingTime?: number;
     info?: string;
     warnMessage?: string;
-    peculiarity?: stringish;
+    peculiarity?: string;
     wikipedia: string;
 }
 

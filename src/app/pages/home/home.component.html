@@ -58,7 +58,7 @@
                     <span class="label">{{ 'home.filters.' + prop + '.title' | translate }}:&nbsp;</span>
                     <span *ngFor="let el of getSanifiedValue(mushroom[prop]); last as last$">{{ ('home.filters.' + prop + '.' + el) | translate }}<span *ngIf="!last$">,&nbsp;</span></span>
                 </div>
-                <div *ngIf="!last$" class="spacer"></div>
+                <div *ngIf="!last$ && getSanifiedValue(mushroom[prop]).length" class="spacer"></div>
             </ng-container>
         </div>
 

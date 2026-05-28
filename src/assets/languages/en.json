@@ -40,7 +40,8 @@
                 "amanita_crocea": "Stipe decorated with paler fibrils in a \"flame\" pattern",
                 "amanita_vaginata": "The stem surface is covered with a finely powdered bloom",
                 "amanita_rubescens": "Cap warts are never white",
-                "amanita_franchetii": "Pyramidal cap warts ranging from yellow to brown"
+                "amanita_franchetii": "Pyramidal cap warts ranging from yellow to brown",
+                "amanita_strobiliformis": "It has a pseudo-root deep in the ground"
             },
             "capColors": {
                 "title": "Cap color",
@@ -54,13 +55,17 @@
                 "ocre": "Ocre",
                 "apricot": "Apricot",
                 "silver": "Silver",
-                "reddish": "Reddish"
+                "reddish": "Reddish",
+                "whitish": "Whitish",
+                "cream": "Cream"
             },
             "capMargin": {
                 "title": "Cap margin",
                 "striate": "Striate",
                 "inrolled": "Inrolled",
-                "smooth": "Smooth"
+                "smooth": "Smooth",
+                "appendiculate": "Appendiculate",
+                "exceeding": "Exceeding"
             },
             "stipeColors": {
                 "title": "Stipe color",
@@ -72,7 +77,8 @@
                 "beige": "Beige",
                 "apricot": "Apricot",
                 "pink": "Pink",
-                "yellowish": "Yellowish"
+                "yellowish": "Yellowish",
+                "whitish": "Whitish"
             },
             "hymeniumStructure": {
                 "title": "Hymenium structure",
@@ -133,7 +139,11 @@
                 "holm_oak": "Holm oak",
                 "hazel_tree": "Hazel tree",
                 "poplar": "Poplar",
-                "willow": "Willow"
+                "willow": "Willow",
+                "hornbeam": "Hornbeam",
+                "aspen": "Aspen",
+                "alder": "Alder",
+                "linden": "Linden"
             },
             "flesh": {
                 "title": "Flesh",
@@ -148,7 +158,17 @@
                 "boiled_egg": "Boiled egg",
                 "aromatic": "Aromatic",
                 "faint": "Faint",
-                "earthy": "Earthy"
+                "earthy": "Earthy",
+                "bad": "Bad",
+                "radish": "Radish",
+                "turnip": "Turnip",
+                "roots": "Roots",
+                "horseradish": "Horseradish",
+                "rapeseed": "Rapeseed",
+                "potato": "Potato",
+                "sweetish": "Sweetish",
+                "strong": "Strong",
+                "cabbage": "Cabbage"
             },
             "taste": {
                 "title": "Taste",
@@ -160,7 +180,9 @@
                 "acidic": "Acidic",
                 "aromatic": "Aromatic",
                 "bad": "Bad",
-                "sour": "Sour"
+                "sour": "Sour",
+                "good": "Gradevole",
+                "bitter": "Bitter"
             },
             "info": {
                 "title": "Info",
@@ -189,7 +211,8 @@
                 "cook_first": "cook for "
             },
             "warnMessage": {
-                "amanita_gemmata": "Could be edible, but in small quantities and without alcohol"
+                "amanita_gemmata": "Could be edible, but in small quantities and without alcohol",
+                "amanita_strobiliformis": "Similiar to poisonous mushrooms (Amanita proxima, Amanita phalloides)"
             }
         },
         "alert": "The method used is not completely safe, do not pick up mushrooms you don't know",

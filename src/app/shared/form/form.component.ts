@@ -13,7 +13,6 @@ export class FormComponent implements AfterViewInit, OnInit {
 
     @Output() formChanged: EventEmitter<MyForm> = new EventEmitter();
 
-    radioValue: string = '';
     checkboxValues: string[] = [];
 
     lastControlChanged?: string;
@@ -21,7 +20,6 @@ export class FormComponent implements AfterViewInit, OnInit {
     constructor() {}
 
     ngOnInit(): void {
-        // const radios = this.form?.controls?.filter(c => c.type === ControlType.RADIO);
         const checkboxes = this.form?.controls?.filter(c => c.type === ControlType.CHECKBOX);
 
         for (const control of (checkboxes || [])) {
@@ -46,13 +44,11 @@ export class FormComponent implements AfterViewInit, OnInit {
     toggleRadio(control: Control, value: string | number) {
         const parsedValue = value.toString();
 
-        if (control.canClear && this.radioValue === parsedValue) {
-            this.radioValue = '';
+        if (control.canClear && control.value === parsedValue) {
+            return '';
         } else {
-            this.radioValue = parsedValue;
+            return parsedValue;
         }
-
-        return this.radioValue;
     }
 
     toggleCheckbox(value: string | number) {

@@ -40,7 +40,8 @@
                 "amanita_crocea": "Gambo con squame cotonose",
                 "amanita_vaginata": "Gambo spesso rivestito da fiocchi concolori al cappello",
                 "amanita_rubescens": "Le verruche sul cappello non sono mai bianche",
-                "amanita_franchetii": "Verruche piramidali dal giallo al bruno"
+                "amanita_franchetii": "Verruche piramidali dal giallo al bruno",
+                "amanita_strobiliformis": "Ha una pseudoradice profondamente infissa nel terreno"
             },
             "capColors": {
                 "title": "Colore cappello",
@@ -54,13 +55,17 @@
                 "ocre": "Ocra",
                 "apricot": "Albicocca",
                 "silver": "Argenteo",
-                "reddish": "Rossastro"
+                "reddish": "Rossastro",
+                "whitish": "Biancastro",
+                "cream": "Crema"
             },
             "capMargin": {
                 "title": "Margine cappello",
                 "striate": "Pettinato",
                 "inrolled": "Involuto",
-                "smooth": "Liscio"
+                "smooth": "Liscio",
+                "appendiculate": "Appendicolato",
+                "exceeding": "Debordante"
             },
             "stipeColors": {
                 "title": "Colore gambo",
@@ -72,7 +77,8 @@
                 "beige": "Beige",
                 "apricot": "Albicocca",
                 "pink": "Rosa",
-                "yellowish": "Giallastro"
+                "yellowish": "Giallastro",
+                "whitish": "Biancastro"
             },
             "hymeniumStructure": {
                 "title": "Struttura imenio",
@@ -133,7 +139,11 @@
                 "holm_oak": "Leccio",
                 "hazel_tree": "Nocciolo",
                 "poplar": "Pioppo",
-                "willow": "Salice"
+                "willow": "Salice",
+                "hornbeam": "Carpino",
+                "aspen": "Pioppo tremulo",
+                "alder": "Ontano",
+                "linden": "Tiglio"
             },
             "flesh": {
                 "title": "Carne",
@@ -148,7 +158,17 @@
                 "boiled_egg": "Uovo sodo",
                 "aromatic": "Aromatico",
                 "faint": "Debole",
-                "earthy": "Terroso"
+                "earthy": "Terroso",
+                "bad": "Sgradevole",
+                "radish": "Ravanello",
+                "turnip": "Rapa",
+                "roots": "Radici",
+                "horseradish": "Rafano",
+                "rapeseed": "Colza",
+                "potato": "Patata",
+                "sweetish": "Dolciastro",
+                "strong": "Forte",
+                "cabbage": "Cavolo"
             },
             "taste": {
                 "title": "Sapore",
@@ -160,7 +180,9 @@
                 "acidic": "Acidulo",
                 "aromatic": "Aromatico",
                 "bad": "Sgradevole",
-                "sour": "Aspro"
+                "sour": "Aspro",
+                "good": "Gradevole",
+                "bitter": "Amaro"
             },
             "info": {
                 "title": "Info",
@@ -189,7 +211,8 @@
                 "cook_first": "cuoci per "
             },
             "warnMessage": {
-                "amanita_gemmata": "Può essere comestibile, ma in piccole quantità ed evitando il consumo di alcol"
+                "amanita_gemmata": "Può essere comestibile, ma in piccole quantità ed evitando il consumo di alcol",
+                "amanita_strobiliformis": "Confondibile con specie tossiche (Amanita proxima, Amanita phalloides)"
             }
         },
         "alert": "Il metodo utilizzato non è completamente sicuro, non raccogliere funghi che non conosci",
