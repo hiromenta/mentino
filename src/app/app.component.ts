@@ -21,8 +21,8 @@ export class AppComponent implements OnInit {
   loadedServices: any[] = [];
 
   tabs = [
-      { label: 'home.tabs.home', url: Paths.HOME },
-      { label: 'home.tabs.settings', url: Paths.SETTINGS }
+      { label: 'home.tabs.home', urls: [Paths.HOME, Paths.MUSHROOM] },
+      { label: 'home.tabs.settings', urls: [Paths.SETTINGS] }
   ];
 
   constructor(
@@ -58,7 +58,7 @@ export class AppComponent implements OnInit {
   }
 
   getActive() {
-    return this.tabs.findIndex(tt => tt.url === location.pathname.split('/')[1]);
+    return this.tabs.findIndex(tt => tt.urls.includes(location.pathname.split('/')[1] as Paths));
   }
 
   onTabClick(url: string) {

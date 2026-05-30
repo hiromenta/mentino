@@ -41,7 +41,12 @@
                 "amanita_vaginata": "The stem surface is covered with a finely powdered bloom",
                 "amanita_rubescens": "Cap warts are never white",
                 "amanita_franchetii": "Pyramidal cap warts ranging from yellow to brown",
-                "amanita_strobiliformis": "It has a pseudo-root deep in the ground"
+                "amanita_strobiliformis": "It has a pseudo-root deep in the ground",
+                "agaricus_crocodilinus": "The surface is reminiscent of a crocodile's skin"
+            },
+            "name": {
+                "title": "Name",
+                "hint": "Genus or species"
             },
             "capColors": {
                 "title": "Cap color",
@@ -89,7 +94,12 @@
                 "pink": "Pink",
                 "white": "White",
                 "yellow": "Yellow",
-                "cream": "Cream"
+                "cream": "Cream",
+                "whitish": "Whitish",
+                "brown": "Brown",
+                "blackish": "Blackish",
+                "reddish": "Reddish",
+                "red": "Red"
             },
             "cap": {
                 "title": "Cap",
@@ -113,15 +123,17 @@
                 "title": "Stipe",
                 "ring_volva": "Ring and volva",
                 "ring": "Ring",
-                "volva": "Volva"
+                "volva": "Volva",
+                "bare": "Bare"
             },
             "spores": {
-                "title": "Spores",
+                "title": "Spore print",
                 "red": "Red",
                 "orange": "Orange",
                 "brown": "Brown",
                 "white": "White",
-                "yellow": "Yellow"
+                "yellow": "Yellow",
+                "blackish": "Blackish"
             },
             "near": {
                 "title": "Near",
@@ -143,7 +155,10 @@
                 "hornbeam": "Hornbeam",
                 "aspen": "Aspen",
                 "alder": "Alder",
-                "linden": "Linden"
+                "linden": "Linden",
+                "grass": "Grass",
+                "scots_pine": "Scots pine",
+                "cedar": "Cedar"
             },
             "flesh": {
                 "title": "Flesh",
@@ -168,7 +183,13 @@
                 "potato": "Potato",
                 "sweetish": "Sweetish",
                 "strong": "Strong",
-                "cabbage": "Cabbage"
+                "cabbage": "Cabbage",
+                "yeast": "Yeast",
+                "bread": "Bread",
+                "anice": "Anice",
+                "good": "Good",
+                "mushroom": "Mushroom",
+                "almond": "Almond"
             },
             "taste": {
                 "title": "Taste",
@@ -181,12 +202,20 @@
                 "aromatic": "Aromatic",
                 "bad": "Bad",
                 "sour": "Sour",
-                "good": "Gradevole",
-                "bitter": "Bitter"
+                "good": "Good",
+                "bitter": "Bitter",
+                "earthy": "Earthy",
+                "honey": "Honey",
+                "mold": "Mold",
+                "spicy": "Spicy"
             },
             "info": {
                 "title": "Info",
-                "amanita_rubescens": "Fesh bruising red"
+                "amanita_rubescens": "Flesh bruising red",
+                "agaricus_arvensis": "Flesh bruising yellow",
+                "agaricus_crocodilinus": "Flesh slowly bruising yellow",
+                "agaricus_augustus": "Flesh bruising yellow",
+                "agaricus_campestris": "Flesh slowly bruising pink"
             },
             "safety": {
                 "title": "Safety",
@@ -212,7 +241,8 @@
             },
             "warnMessage": {
                 "amanita_gemmata": "Could be edible, but in small quantities and without alcohol",
-                "amanita_strobiliformis": "Similiar to poisonous mushrooms (Amanita proxima, Amanita phalloides)"
+                "amanita_strobiliformis": "Similiar to poisonous mushrooms (Amanita proxima, Amanita phalloides)",
+                "agaricus_campestris": "Similiar to poisonous mushrooms (Agaricus xanthodermus, Amanita virosa, Amanita verna, Amanita phalloides)"
             }
         },
         "alert": "The method used is not completely safe, do not pick up mushrooms you don't know",

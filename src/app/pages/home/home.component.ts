@@ -16,7 +16,11 @@ export class HomeComponent implements OnInit {
     mushrooms: Mushroom[] = [];
     mushroom?: Mushroom;
 
-    form: MyForm = { controls: [] };
+    form: MyForm = { controls: [
+        { type: ControlType.TITLE, selector: `home.filters.name.title` },
+        { selector: 'name', type: ControlType.TEXT, placeholder: 'home.filters.name.hint' },
+        { type: ControlType.SPACER, selector: this._utilsService.getRandomSelector() }
+    ] };
 
     details: (keyof Mushroom)[] = [
         'capColors',
@@ -45,13 +49,19 @@ export class HomeComponent implements OnInit {
 
         this._mushroomsService.getMushrooms().subscribe((mushrooms) => {
             this.mushrooms = mushrooms;
+
             this._buildFilters();
 
-            // const queryMushroom = this._route.snapshot.queryParams['m'].toLowerCase();
             const queryMushroom = this._route.snapshot.url?.[0]?.path?.toLowerCase();
 
             if (queryMushroom) {
-                this.mushroom = this.mushrooms.find(m => m.name.replace(' ', '').toLowerCase() === queryMushroom);
+                const filtered = mushrooms.filter(m => m.name.replace(' ', '').toLowerCase().includes(queryMushroom));
+
+                if (filtered.length === 1) {
+                    this.mushroom = filtered[0];
+                } else {
+                    this.form.controls.find(c => c.selector === 'name')!.value = queryMushroom;
+                }
             }
         });
     }
@@ -89,6 +99,12 @@ export class HomeComponent implements OnInit {
         }
 
         return this.mushrooms.filter(m => {
+            const name = this.form.value?.['name'];
+
+            if (name && !m.name.replace(' ', '').toLowerCase().includes(name.replace(' ', '').toLowerCase())) {
+                return false;
+            }
+
             for (const detail of this.allDetails) {
                 const value = this.form.value?.[detail];
 
@@ -153,7 +169,7 @@ export class HomeComponent implements OnInit {
     }
 
     private _buildFilters() {
-        for (const control of this.form.controls) {
+        for (const control of this.form.controls.filter(c => [ControlType.CHECKBOX, ControlType.RADIO].includes(c.type))) {
             control!.options = [...new Set(this.mushrooms.map(m => m[control.selector as keyof Mushroom]).flat())]?.filter(el => !!el)?.map(el => ({ value: `${control.selector}_${el}`, label: `home.filters.${control.selector}.${el}` }));
         }
     }

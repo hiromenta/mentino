@@ -41,7 +41,12 @@
                 "amanita_vaginata": "Gambo spesso rivestito da fiocchi concolori al cappello",
                 "amanita_rubescens": "Le verruche sul cappello non sono mai bianche",
                 "amanita_franchetii": "Verruche piramidali dal giallo al bruno",
-                "amanita_strobiliformis": "Ha una pseudoradice profondamente infissa nel terreno"
+                "amanita_strobiliformis": "Ha una pseudoradice profondamente infissa nel terreno",
+                "agaricus_crocodilinus": "La superficie ricorda la pelle di coccodrillo"
+            },
+            "name": {
+                "title": "Nome",
+                "hint": "Genere o specie"
             },
             "capColors": {
                 "title": "Colore cappello",
@@ -89,7 +94,12 @@
                 "pink": "Rosa",
                 "white": "Bianco",
                 "yellow": "Giallo",
-                "cream": "Crema"
+                "cream": "Crema",
+                "whitish": "Biancastro",
+                "brown": "Marrone",
+                "blackish": "Nerastro",
+                "reddish": "Rossastro",
+                "red": "Rosso"
             },
             "cap": {
                 "title": "Cappello",
@@ -113,15 +123,17 @@
                 "title": "Gambo",
                 "ring_volva": "Anello e volva",
                 "ring": "Anello",
-                "volva": "Volva"
+                "volva": "Volva",
+                "bare": "Libero"
             },
             "spores": {
-                "title": "Spore",
-                "red": "Rosse",
-                "orange": "Arancioni",
-                "brown": "Marroni",
-                "white": "Bianche",
-                "yellow": "Gialle"
+                "title": "Sporata",
+                "red": "Rossa",
+                "orange": "Arancione",
+                "brown": "Marrone",
+                "white": "Bianca",
+                "yellow": "Gialla",
+                "blackish": "Nerastra"
             },
             "near": {
                 "title": "Vicino a",
@@ -143,7 +155,10 @@
                 "hornbeam": "Carpino",
                 "aspen": "Pioppo tremulo",
                 "alder": "Ontano",
-                "linden": "Tiglio"
+                "linden": "Tiglio",
+                "grass": "Erba",
+                "scots_pine": "Pino silvestre",
+                "cedar": "Cedro"
             },
             "flesh": {
                 "title": "Carne",
@@ -168,7 +183,13 @@
                 "potato": "Patata",
                 "sweetish": "Dolciastro",
                 "strong": "Forte",
-                "cabbage": "Cavolo"
+                "cabbage": "Cavolo",
+                "yeast": "Lievito",
+                "bread": "Pane",
+                "anice": "Anice",
+                "good": "Gradevole",
+                "mushroom": "Fungino",
+                "almond": "Mandorla"
             },
             "taste": {
                 "title": "Sapore",
@@ -182,11 +203,19 @@
                 "bad": "Sgradevole",
                 "sour": "Aspro",
                 "good": "Gradevole",
-                "bitter": "Amaro"
+                "bitter": "Amaro",
+                "earthy": "Terroso",
+                "honey": "Miele",
+                "mold": "Muffa",
+                "spicy": "Piccante"
             },
             "info": {
                 "title": "Info",
-                "amanita_rubescens": "Carne virante al rosso"
+                "amanita_rubescens": "Carne virante al rosso",
+                "agaricus_arvensis": "Carne virante al giallo",
+                "agaricus_crocodilinus": "Carne lentamente virante al giallo",
+                "agaricus_augustus": "Carne virante al giallo",
+                "agaricus_campestris": "Carne lentamente virante al rosa"
             },
             "safety": {
                 "title": "Commestibilità",
@@ -212,7 +241,8 @@
             },
             "warnMessage": {
                 "amanita_gemmata": "Può essere comestibile, ma in piccole quantità ed evitando il consumo di alcol",
-                "amanita_strobiliformis": "Confondibile con specie tossiche (Amanita proxima, Amanita phalloides)"
+                "amanita_strobiliformis": "Confondibile con specie tossiche (Amanita proxima, Amanita phalloides)",
+                "agaricus_campestris": "Confondibile con specie tossiche (Agaricus xanthodermus, Amanita virosa, Amanita verna, Amanita phalloides)"
             }
         },
         "alert": "Il metodo utilizzato non è completamente sicuro, non raccogliere funghi che non conosci",
