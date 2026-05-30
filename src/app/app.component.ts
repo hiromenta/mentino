@@ -61,8 +61,8 @@ export class AppComponent implements OnInit {
     return this.tabs.findIndex(tt => tt.urls.includes(location.pathname.split('/')[1] as Paths));
   }
 
-  onTabClick(url: string) {
-    this._router.navigate([url]);
+  onTabClick(urls: string[]) {
+    this._router.navigate([urls[0]]);
   }
 
   getTranslation(message: string) {

@@ -4,7 +4,7 @@
 
 <div class="container" [class.windowed]="!isFullscreen()" [class.fullscreen]="isFullscreen()">
     <div class="tabs">
-        <div (click)="onTabClick(tab.url)" *ngFor="let tab of tabs; index as i" class="tab" [class.active]="i === getActive()">{{ getTranslation(tab.label) }}</div>
+        <div (click)="onTabClick(tab.urls)" *ngFor="let tab of tabs; index as i" class="tab" [class.active]="i === getActive()">{{ getTranslation(tab.label) }}</div>
     </div>
 
     <router-outlet></router-outlet>
