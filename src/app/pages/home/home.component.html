@@ -34,11 +34,11 @@
 
         <div class="detail-imgs">
             <div class="detail-img">
-                <img [src]="'../../../assets/mushrooms/' + getImgName(mushroom.name) + '_1.jpg'" [alt]="mushroom.name">
+                <img (click)="showImage(mushroom, 1)" [src]="'../../../assets/mushrooms/' + getImgName(mushroom.name) + '_1.jpg'" [alt]="mushroom.name">
             </div>
             <div class="detail-img half">
-                <img [src]="'../../../assets/mushrooms/' + getImgName(mushroom.name) + '_2.jpg'" [alt]="mushroom.name">
-                <img [src]="'../../../assets/mushrooms/' + getImgName(mushroom.name) + '_3.jpg'" [alt]="mushroom.name">
+                <img (click)="showImage(mushroom, 2)" [src]="'../../../assets/mushrooms/' + getImgName(mushroom.name) + '_2.jpg'" [alt]="mushroom.name">
+                <img (click)="showImage(mushroom, 3)" [src]="'../../../assets/mushrooms/' + getImgName(mushroom.name) + '_3.jpg'" [alt]="mushroom.name">
             </div>
         </div>
 

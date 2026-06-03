@@ -4,10 +4,12 @@ import { BrowserModule } from "@angular/platform-browser";
 import { CommonModule } from '@angular/common';
 import { FormComponent } from './form/form.component';
 import { PipesModule } from '../pipes/pipes.module';
+import { ImageViewerComponent } from './image-viewer/image-viewer.component';
 
 const COMPONENTS = [
   LoaderComponent,
-  FormComponent
+  FormComponent,
+  ImageViewerComponent
 ];
 
 @NgModule({

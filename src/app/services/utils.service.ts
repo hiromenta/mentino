@@ -5,6 +5,8 @@ export class UtilsService {
 
     private _fullscreen = JSON.parse(localStorage.getItem('fullscreen') || 'false');
 
+    shownImageUrl?: string;
+
     constructor() {}
 
     get fullscreen() {

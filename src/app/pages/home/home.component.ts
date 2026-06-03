@@ -123,6 +123,11 @@ export class HomeComponent implements OnInit {
         });
     }
 
+    showImage(mushroom: Mushroom, num: number) {
+        const url = `../../../assets/mushrooms/${this.getImgName(mushroom.name)}_${num}.jpg`;
+        this._utilsService.shownImageUrl = url;
+    }
+
     private _buildFiltersArray(arrayString: string) {
         const array = [];
 
