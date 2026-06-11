@@ -59,11 +59,23 @@ export class HomeComponent implements OnInit {
 
                 if (filtered.length === 1) {
                     this.mushroom = filtered[0];
+                    this._utilsService.setTitle(this.mushroom.name);
                 } else {
                     this.form.controls.find(c => c.selector === 'name')!.value = queryMushroom;
+                    this._utilsService.setTitle(queryMushroom);
                 }
             }
         });
+    }
+
+    selectDetail(m: Mushroom) {
+        this.mushroom = m;
+        this._utilsService.setTitle(this.mushroom.name);
+    }
+
+    closeDetail() {
+        this.mushroom = undefined;
+        this._utilsService.resetTitle();
     }
 
     private _buildControls() {

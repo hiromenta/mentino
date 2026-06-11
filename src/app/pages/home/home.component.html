@@ -6,7 +6,7 @@
     </div>
 
     <div class="mushrooms" [class.reduced]="!!mushroom">
-        <div (click)="mushroom = m" *ngFor="let m of getMushrooms()" [class]="'mushroom ' + m.safety">
+        <div (click)="selectDetail(m)" *ngFor="let m of getMushrooms()" [class]="'mushroom ' + m.safety">
             <div class="img">
                 <img [src]="'../../../assets/mushrooms/' + getImgName(m.name) + '_min.jpg'" [alt]="m.name">
             </div>
@@ -17,7 +17,7 @@
     </div>
 
     <div *ngIf="mushroom" class="detail">
-        <div class="close" (click)="mushroom = undefined">x</div>
+        <div class="close" (click)="closeDetail()">x</div>
 
         <div class="detail-name">{{ mushroom.name | titlecase }}</div>
 
