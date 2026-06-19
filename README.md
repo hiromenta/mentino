@@ -1,2 +1,1 @@
 # Mentino
-https://mentino.net
