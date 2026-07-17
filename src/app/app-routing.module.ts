@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SettingsComponent } from './pages/settings/settings.component';
+import { MushroomsComponent } from './pages/mushrooms/mushrooms.component';
 
 export enum Paths {
   LOGIN = 'login',
@@ -14,9 +14,9 @@ export enum Paths {
 
 const routes: Routes = [
   { path: Paths.SETTINGS, component: SettingsComponent },
-  { path: Paths.HOME, pathMatch: 'full', component: HomeComponent },
+  { path: Paths.HOME, pathMatch: 'full', component: MushroomsComponent },
   { path: Paths.MUSHROOM, children: [
-    { path: '**', component: HomeComponent }
+    { path: '**', component: MushroomsComponent }
   ]},
   { path: '**', component: NotFoundComponent }
 ];

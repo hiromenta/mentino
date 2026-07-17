@@ -45,6 +45,10 @@ export class ThemesService {
 
     private _changeTheme(theme: Themes): Observable<Theme> {
         return this._configService.getThemesConfig().pipe(map((themes) => {
+            if (!themes[theme]) {
+                theme = Themes.LIGHT;
+            }
+
             for (const property of Object.entries(themes[theme])) {
                 document.documentElement.style.setProperty('--' + property[0], property[1]);
             }

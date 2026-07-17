@@ -1,4 +1,4 @@
-<div class="alert">{{ 'home.alert' | translate }}</div>
+<div class="alert">{{ 'mushrooms.alert' | translate }}</div>
 
 <div class="main">
     <div class="filters" *ngIf="form">
@@ -23,12 +23,12 @@
 
         <div class="tag" [class]="mushroom.safety">
             <div>
-                {{ ('home.detail.tags.' + mushroom.safety) | translate }}
-                <span *ngIf="mushroom.extra">{{ ('home.detail.extra.' + mushroom.extra) | translate }}</span>
+                {{ ('mushrooms.detail.tags.' + mushroom.safety) | translate }}
+                <span *ngIf="mushroom.extra">{{ ('mushrooms.detail.extra.' + mushroom.extra) | translate }}</span>
                 <span *ngIf="mushroom.cookingTime">{{ mushroom.cookingTime }}m</span>
             </div>
             <div class="warn-message" *ngIf="mushroom.warnMessage">
-                {{ 'home.detail.warnMessage.' + mushroom.warnMessage | translate }}
+                {{ 'mushrooms.detail.warnMessage.' + mushroom.warnMessage | translate }}
             </div>
         </div>
 
@@ -44,26 +44,26 @@
 
         <div class="detail-info">
             <div class="peculiarity" *ngIf="getSanifiedValue(mushroom.peculiarity).length">
-                <span class="label">{{ 'home.filters.peculiarity.title' | translate }}:&nbsp;</span>
-                <span *ngFor="let el of getSanifiedValue(mushroom.peculiarity); last as last$">{{ ('home.filters.peculiarity.' + el) | translate }}<span *ngIf="!last$">,&nbsp;</span></span>
+                <span class="label">{{ 'mushrooms.filters.peculiarity.title' | translate }}:&nbsp;</span>
+                <span *ngFor="let el of getSanifiedValue(mushroom.peculiarity); last as last$">{{ ('mushrooms.filters.peculiarity.' + el) | translate }}<span *ngIf="!last$">,&nbsp;</span></span>
             </div>
 
             <div class="info" *ngIf="getSanifiedValue(mushroom.info).length">
-                <span class="label">{{ 'home.filters.info.title' | translate }}:&nbsp;</span>
-                <span *ngFor="let el of getSanifiedValue(mushroom.info); last as last$">{{ ('home.filters.info.' + el) | translate }}<span *ngIf="!last$">,&nbsp;</span></span>
+                <span class="label">{{ 'mushrooms.filters.info.title' | translate }}:&nbsp;</span>
+                <span *ngFor="let el of getSanifiedValue(mushroom.info); last as last$">{{ ('mushrooms.filters.info.' + el) | translate }}<span *ngIf="!last$">,&nbsp;</span></span>
             </div>
 
             <ng-container *ngFor="let prop of details; last as last$">
                 <div [class]="prop" *ngIf="getSanifiedValue(mushroom[prop]).length">
-                    <span class="label">{{ 'home.filters.' + prop + '.title' | translate }}:&nbsp;</span>
-                    <span *ngFor="let el of getSanifiedValue(mushroom[prop]); last as last$">{{ ('home.filters.' + prop + '.' + el) | translate }}<span *ngIf="!last$">,&nbsp;</span></span>
+                    <span class="label">{{ 'mushrooms.filters.' + prop + '.title' | translate }}:&nbsp;</span>
+                    <span *ngFor="let el of getSanifiedValue(mushroom[prop]); last as last$">{{ ('mushrooms.filters.' + prop + '.' + el) | translate }}<span *ngIf="!last$">,&nbsp;</span></span>
                 </div>
                 <div *ngIf="!last$ && getSanifiedValue(mushroom[prop]).length" class="spacer"></div>
             </ng-container>
         </div>
 
-        <div class="wiki">{{ 'home.wikipedia' | translate }}<a target="_blank" [href]="mushroom.wikipedia">Wikipedia</a></div>
+        <div class="wiki">{{ 'mushrooms.wikipedia' | translate }}<a target="_blank" [href]="mushroom.wikipedia">Wikipedia</a></div>
     </div>
 </div>
 
-<div class="message">{{ 'home.message' | translate }}<a target="_blank" href="https://github.com/xHiro133/mentino/issues">Github</a></div>
+<div class="message">{{ 'mushrooms.message' | translate }}<a target="_blank" href="https://github.com/xHiro133/mentino/issues">Github</a></div>

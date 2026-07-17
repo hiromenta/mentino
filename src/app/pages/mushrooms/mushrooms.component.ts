@@ -6,19 +6,19 @@ import { UtilsService } from "../../services/utils.service";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
-    selector: 'my-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss'],
+    selector: 'my-mushrooms',
+    templateUrl: './mushrooms.component.html',
+    styleUrls: ['./mushrooms.component.scss'],
     standalone: false
 })
-export class HomeComponent implements OnInit {
+export class MushroomsComponent implements OnInit {
 
     mushrooms: Mushroom[] = [];
     mushroom?: Mushroom;
 
     form: MyForm = { controls: [
-        { type: ControlType.TITLE, selector: `home.filters.name.title` },
-        { selector: 'name', type: ControlType.TEXT, placeholder: 'home.filters.name.hint' },
+        { type: ControlType.TITLE, selector: `mushrooms.filters.name.title` },
+        { selector: 'name', type: ControlType.TEXT, placeholder: 'mushrooms.filters.name.hint' },
         { type: ControlType.SPACER, selector: this._utilsService.getRandomSelector() }
     ] };
 
@@ -81,7 +81,7 @@ export class HomeComponent implements OnInit {
     private _buildControls() {
         for (const detail of this.allDetails) {
             this.form.controls.push(
-                { type: ControlType.TITLE, selector: `home.filters.${detail}.title` },
+                { type: ControlType.TITLE, selector: `mushrooms.filters.${detail}.title` },
                 {
                     selector: detail,
                     type: ControlType.RADIO,
@@ -187,7 +187,7 @@ export class HomeComponent implements OnInit {
 
     private _buildFilters() {
         for (const control of this.form.controls.filter(c => [ControlType.CHECKBOX, ControlType.RADIO].includes(c.type))) {
-            control!.options = [...new Set(this.mushrooms.map(m => m[control.selector as keyof Mushroom]).flat())]?.filter(el => !!el)?.map(el => ({ value: `${control.selector}_${el}`, label: `home.filters.${control.selector}.${el}` }));
+            control!.options = [...new Set(this.mushrooms.map(m => m[control.selector as keyof Mushroom]).flat())]?.filter(el => !!el)?.map(el => ({ value: `${control.selector}_${el}`, label: `mushrooms.filters.${control.selector}.${el}` }));
         }
     }
 
