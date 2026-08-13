@@ -3,7 +3,7 @@ import { Theme, Themes } from "../models/themes.model";
 import { ConfigService } from "./config.service";
 import { map, Observable, of } from "rxjs";
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class ThemesService {
 
     private _currentThemeName = this._getThemeFromLocalStorage();

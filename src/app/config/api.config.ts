@@ -4,7 +4,7 @@ import { Api, ApiOptions } from "../models/api.model";
 import { delay, Observable, switchMap, throwError } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class ApiConfig {
 
     baseUrl: string = '';

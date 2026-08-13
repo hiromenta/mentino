@@ -3,16 +3,23 @@ import { ThemesService } from './services/themes.service';
 import { TranslateService } from './services/translate.service';
 import { Themes } from './models/themes.model';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { LoaderService } from './services/loader.service';
-import { Paths } from './app-routing.module';
+import { Paths } from './app.routes';
 import { UtilsService } from './services/utils.service';
+import { LoaderComponent } from './shared/loader/loader.component';
+import { ImageViewerComponent } from './shared/image-viewer/image-viewer.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  standalone: false
+  standalone: true,
+  imports: [
+    LoaderComponent,
+    ImageViewerComponent,
+    RouterModule
+  ]
 })
 export class AppComponent implements OnInit {
 

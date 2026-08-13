@@ -3,7 +3,7 @@ import { ConfigService } from "./config.service";
 import { Observable, of, switchMap } from "rxjs";
 import { Role } from "../models/feature.model";
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class FeaturesService {
 
     activeRole: Role = Role.GUEST;

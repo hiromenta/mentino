@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class UtilsService {
 
     private _fullscreen = JSON.parse(localStorage.getItem('fullscreen') || 'false');

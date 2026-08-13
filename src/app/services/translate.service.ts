@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { map, Observable, of, tap } from "rxjs";
 import { Language, LanguageCode } from "../models/language.model";
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class TranslateService {
 
     private _currentLanguageCode: LanguageCode = this._getCurrentLanguageFromLocalStorage();    

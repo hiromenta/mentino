@@ -1,69 +1,120 @@
 <div class="alert">{{ 'mushrooms.alert' | translate }}</div>
 
 <div class="main">
-    <div class="filters" *ngIf="form">
-        <my-form [form]="form"></my-form>
-    </div>
+    @if (form) {
+        <div class="filters">
+            <my-form [form]="form"></my-form>
+        </div>
+    }
 
     <div class="mushrooms" [class.reduced]="!!mushroom">
-        <div (click)="selectDetail(m)" *ngFor="let m of getMushrooms()" [class]="'mushroom ' + m.safety">
-            <div class="img">
-                <img [src]="'../../../assets/mushrooms/' + getImgName(m.name) + '_min.jpg'" [alt]="m.name">
-            </div>
-            <div class="name">
-                {{ m.name | titlecase }}
-            </div>
-        </div>
-    </div>
-
-    <div *ngIf="mushroom" class="detail">
-        <div class="close" (click)="closeDetail()">x</div>
-
-        <div class="detail-name">{{ mushroom.name | titlecase }}</div>
-
-        <div class="tag" [class]="mushroom.safety">
-            <div>
-                {{ ('mushrooms.detail.tags.' + mushroom.safety) | translate }}
-                <span *ngIf="mushroom.extra">{{ ('mushrooms.detail.extra.' + mushroom.extra) | translate }}</span>
-                <span *ngIf="mushroom.cookingTime">{{ mushroom.cookingTime }}m</span>
-            </div>
-            <div class="warn-message" *ngIf="mushroom.warnMessage">
-                {{ 'mushrooms.detail.warnMessage.' + mushroom.warnMessage | translate }}
-            </div>
-        </div>
-
-        <div class="detail-imgs">
-            <div class="detail-img">
-                <img (click)="showImage(mushroom, 1)" [src]="'../../../assets/mushrooms/' + getImgName(mushroom.name) + '_1.jpg'" [alt]="mushroom.name">
-            </div>
-            <div class="detail-img half">
-                <img (click)="showImage(mushroom, 2)" [src]="'../../../assets/mushrooms/' + getImgName(mushroom.name) + '_2.jpg'" [alt]="mushroom.name">
-                <img (click)="showImage(mushroom, 3)" [src]="'../../../assets/mushrooms/' + getImgName(mushroom.name) + '_3.jpg'" [alt]="mushroom.name">
-            </div>
-        </div>
-
-        <div class="detail-info">
-            <div class="peculiarity" *ngIf="getSanifiedValue(mushroom.peculiarity).length">
-                <span class="label">{{ 'mushrooms.filters.peculiarity.title' | translate }}:&nbsp;</span>
-                <span *ngFor="let el of getSanifiedValue(mushroom.peculiarity); last as last$">{{ ('mushrooms.filters.peculiarity.' + el) | translate }}<span *ngIf="!last$">,&nbsp;</span></span>
-            </div>
-
-            <div class="info" *ngIf="getSanifiedValue(mushroom.info).length">
-                <span class="label">{{ 'mushrooms.filters.info.title' | translate }}:&nbsp;</span>
-                <span *ngFor="let el of getSanifiedValue(mushroom.info); last as last$">{{ ('mushrooms.filters.info.' + el) | translate }}<span *ngIf="!last$">,&nbsp;</span></span>
-            </div>
-
-            <ng-container *ngFor="let prop of details; last as last$">
-                <div [class]="prop" *ngIf="getSanifiedValue(mushroom[prop]).length">
-                    <span class="label">{{ 'mushrooms.filters.' + prop + '.title' | translate }}:&nbsp;</span>
-                    <span *ngFor="let el of getSanifiedValue(mushroom[prop]); last as last$">{{ ('mushrooms.filters.' + prop + '.' + el) | translate }}<span *ngIf="!last$">,&nbsp;</span></span>
+        @for (m of getMushrooms(); track m) {
+            <div (click)="selectDetail(m)" [class]="'mushroom ' + m.safety">
+                <div class="img">
+                    <img [src]="'../../../assets/mushrooms/' + getImgName(m.name) + '_min.jpg'" [alt]="m.name">
                 </div>
-                <div *ngIf="!last$ && getSanifiedValue(mushroom[prop]).length" class="spacer"></div>
-            </ng-container>
-        </div>
-
-        <div class="wiki">{{ 'mushrooms.wikipedia' | translate }}<a target="_blank" [href]="mushroom.wikipedia">Wikipedia</a></div>
+                <div class="name">
+                    {{ m.name | titlecase }}
+                </div>
+            </div>
+        }
     </div>
+
+    @if (mushroom) {
+        <div class="detail">
+            <div class="close" (click)="closeDetail()">x</div>
+
+            <div class="detail-name">{{ mushroom.name | titlecase }}</div>
+
+            <div class="tag" [class]="mushroom.safety">
+                <div>
+                    {{ ('mushrooms.detail.tags.' + mushroom.safety) | translate }}
+
+                    @if (mushroom.extra) {
+                        <span>{{ ('mushrooms.detail.extra.' + mushroom.extra) | translate }}</span>
+                    }
+
+                    @if (mushroom.cookingTime) {
+                        <span>{{ mushroom.cookingTime }}m</span>
+                    }
+                </div>
+
+                @if (mushroom.warnMessage) {
+                    <div class="warn-message">
+                        {{ 'mushrooms.detail.warnMessage.' + mushroom.warnMessage | translate }}
+                    </div>
+                }
+            </div>
+
+            <div class="detail-imgs">
+                <div class="detail-img">
+                    <img (click)="showImage(mushroom, 1)" [src]="'../../../assets/mushrooms/' + getImgName(mushroom.name) + '_1.jpg'" [alt]="mushroom.name">
+                </div>
+                <div class="detail-img half">
+                    <img (click)="showImage(mushroom, 2)" [src]="'../../../assets/mushrooms/' + getImgName(mushroom.name) + '_2.jpg'" [alt]="mushroom.name">
+                    <img (click)="showImage(mushroom, 3)" [src]="'../../../assets/mushrooms/' + getImgName(mushroom.name) + '_3.jpg'" [alt]="mushroom.name">
+                </div>
+            </div>
+
+            <div class="detail-info">
+                @if (getSanifiedValue(mushroom.peculiarity).length) {
+                    <div class="peculiarity">
+                        <span class="label">{{ 'mushrooms.filters.peculiarity.title' | translate }}:&nbsp;</span>
+
+                        @for (el of getSanifiedValue(mushroom.peculiarity); track el; let last = $last) {
+                            <span>
+                                {{ ('mushrooms.filters.peculiarity.' + el) | translate }}
+
+                                @if (!last) {
+                                    <span>,&nbsp;</span>
+                                }
+                            </span>
+                        }
+                    </div>
+                }
+
+                @if (getSanifiedValue(mushroom.info).length) {
+                    <div class="info">
+                        <span class="label">{{ 'mushrooms.filters.info.title' | translate }}:&nbsp;</span>
+
+                        @for (el of getSanifiedValue(mushroom.info); track el; let last = $last) {
+                            <span>
+                                {{ ('mushrooms.filters.info.' + el) | translate }}
+
+                                @if (!last) {
+                                    <span>,&nbsp;</span>
+                                }
+                            </span>
+                        }
+                    </div>
+                }
+
+                @for (prop of details; track prop; let last = $last) {
+                    @if (getSanifiedValue(mushroom[prop]).length) {
+                        <div [class]="prop">
+                            <span class="label">{{ 'mushrooms.filters.' + prop + '.title' | translate }}:&nbsp;</span>
+
+                            @for (el of getSanifiedValue(mushroom[prop]); track el; let last = $last) {
+                                <span>
+                                    {{ ('mushrooms.filters.' + prop + '.' + el) | translate }}
+
+                                    @if (!last) {
+                                        <span>,&nbsp;</span>
+                                    }
+                                </span>
+                            }
+                        </div>
+                    }
+
+                    @if (!last && getSanifiedValue(mushroom[prop]).length) {
+                        <div class="spacer"></div>
+                    }
+                }
+            </div>
+
+            <div class="wiki">{{ 'mushrooms.wikipedia' | translate }}<a target="_blank" [href]="mushroom.wikipedia">Wikipedia</a></div>
+        </div>
+    }
 </div>
 
 <div class="message">{{ 'mushrooms.message' | translate }}<a target="_blank" href="https://github.com/xHiro133/mentino/issues">Github</a></div>

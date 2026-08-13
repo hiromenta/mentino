@@ -1,3 +1,5 @@
-<div *ngIf="getImgUrl()" (click)="close()">
-    <img [src]="getImgUrl()">
-</div>
+@if (getImgUrl()) {
+    <div (click)="close()">
+        <img [src]="getImgUrl()">
+    </div>
+}

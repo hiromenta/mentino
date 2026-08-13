@@ -4,12 +4,20 @@ import { Mushroom } from "../../models/mushroom.model";
 import { ControlType, MyForm } from "../../models/form.model";
 import { UtilsService } from "../../services/utils.service";
 import { ActivatedRoute } from "@angular/router";
+import { TranslatePipe } from "../../pipes/translate.pipe";
+import { FormComponent } from "../../shared/form/form.component";
+import { TitleCasePipe } from "@angular/common";
 
 @Component({
     selector: 'my-mushrooms',
     templateUrl: './mushrooms.component.html',
     styleUrls: ['./mushrooms.component.scss'],
-    standalone: false
+    standalone: true,
+    imports: [
+        TranslatePipe,
+        FormComponent,
+        TitleCasePipe
+    ]
 })
 export class MushroomsComponent implements OnInit {
 

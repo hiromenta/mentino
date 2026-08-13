@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
 import { ApiConfig } from "../config/api.config";
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class ApiService {
 
     private _useMocks = true;

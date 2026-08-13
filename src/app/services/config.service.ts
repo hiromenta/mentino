@@ -6,12 +6,12 @@ import { Config } from "../models/config.model";
 import { Feature } from "../models/feature.model";
 import { Theme } from "../models/themes.model";
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class ConfigService {
 
     private _configs: { [key: string]: Config } = {};
 
-    constructor(private _http: HttpClient) { }
+    constructor(private _http: HttpClient) {}
 
     getAppConfig(): Observable<any> {
         return this._getConfig<any>('app');

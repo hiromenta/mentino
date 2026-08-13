@@ -2,11 +2,15 @@
 
 <my-image-viewer></my-image-viewer>
 
-<div class="title" *ngIf="!isFullscreen()">{{ title }}</div>
+@if (!isFullscreen) {
+    <div class="title">{{ title }}</div>
+}
 
 <div class="container" [class.windowed]="!isFullscreen()" [class.fullscreen]="isFullscreen()">
     <div class="tabs">
-        <div (click)="onTabClick(tab.urls)" *ngFor="let tab of tabs; index as i" class="tab" [class.active]="i === getActive()">{{ getTranslation(tab.label) }}</div>
+        @for (tab of tabs; track tab; let i = $index) {
+            <div (click)="onTabClick(tab.urls)" class="tab" [class.active]="i === getActive()">{{ getTranslation(tab.label) }}</div>
+        }
     </div>
 
     <router-outlet></router-outlet>

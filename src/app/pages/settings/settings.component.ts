@@ -7,12 +7,16 @@ import { of, switchMap } from "rxjs";
 import { ThemesService } from "../../services/themes.service";
 import { UtilsService } from "../../services/utils.service";
 import { LoaderService } from "../../services/loader.service";
+import { FormComponent } from "../../shared/form/form.component";
 
 @Component({
     selector: 'my-settings',
     templateUrl: './settings.component.html',
     styleUrls: ['./settings.component.scss'],
-    standalone: false
+    standalone: true,
+    imports: [
+        FormComponent
+    ]
 })
 export class SettingsComponent implements OnInit {
 

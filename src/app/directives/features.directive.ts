@@ -3,7 +3,7 @@ import { FeaturesService } from "../services/features.service";
 
 @Directive({
     selector: '[myFeature]',
-    standalone: false
+    standalone: true
 })
 export class FeaturesDirective implements OnChanges {
 

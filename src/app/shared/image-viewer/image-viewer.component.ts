@@ -5,7 +5,7 @@ import { UtilsService } from "../../services/utils.service";
     selector: 'my-image-viewer',
     templateUrl: './image-viewer.component.html',
     styleUrls: ['./image-viewer.component.scss'],
-    standalone: false
+    standalone: true
 })
 export class ImageViewerComponent {
 

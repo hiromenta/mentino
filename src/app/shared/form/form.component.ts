@@ -1,11 +1,17 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { Control, ControlType, MyForm } from "../../models/form.model";
+import { TranslatePipe } from "../../pipes/translate.pipe";
+import { NgTemplateOutlet } from "@angular/common";
 
 @Component({
     selector: 'my-form',
     templateUrl: './form.component.html',
     styleUrls: ['./form.component.scss'],
-    standalone: false
+    standalone: true,
+    imports: [
+        TranslatePipe,
+        NgTemplateOutlet
+    ]
 })
 export class FormComponent implements AfterViewInit, OnInit {
 
