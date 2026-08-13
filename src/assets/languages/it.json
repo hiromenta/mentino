@@ -21,11 +21,10 @@
             "colors": {
                 "primary": "Colore primario",
                 "secondary": "Colore secondario",
-                "accent": "Colore d'accento (normale)",
-                "accentLight": "Colore d'accento (chiaro)",
-                "light": "Colore chiaro",
-                "dark": "Colore scuro",
-                "background": "URL immagine di sfondo"
+                "accent": "Colore d'accento",
+                "accentActive": "Colore d'accento (attivo)",
+                "background": "Colore sfondo",
+                "backgroundImage": "URL immagine di sfondo"
             }
         }
     },

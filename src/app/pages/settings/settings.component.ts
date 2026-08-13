@@ -56,10 +56,9 @@ export class SettingsComponent implements OnInit {
             { type: ControlType.COLOR, selector: 'primary', label: 'settings.theme.colors.primary', defaultValue: this._themesService.getCustomProperty('primary') },
             { type: ControlType.COLOR, selector: 'secondary', label: 'settings.theme.colors.secondary', defaultValue: this._themesService.getCustomProperty('secondary') },
             { type: ControlType.COLOR, selector: 'accent', label: 'settings.theme.colors.accent', defaultValue: this._themesService.getCustomProperty('accent') },
-            { type: ControlType.COLOR, selector: 'accentLight', label: 'settings.theme.colors.accentLight', defaultValue: this._themesService.getCustomProperty('accentLight') },
-            { type: ControlType.COLOR, selector: 'light', label: 'settings.theme.colors.light', defaultValue: this._themesService.getCustomProperty('light') },
-            { type: ControlType.COLOR, selector: 'dark', label: 'settings.theme.colors.dark', defaultValue: this._themesService.getCustomProperty('dark') },
-            { type: ControlType.TEXT, selector: 'background', placeholder: 'settings.theme.colors.background', defaultValue: this._themesService.getCustomProperty('background') }
+            { type: ControlType.COLOR, selector: 'accentActive', label: 'settings.theme.colors.accentActive', defaultValue: this._themesService.getCustomProperty('accentActive') },
+            { type: ControlType.COLOR, selector: 'background', label: 'settings.theme.colors.background', defaultValue: this._themesService.getCustomProperty('background') },
+            { type: ControlType.TEXT, selector: 'backgroundImage', placeholder: 'settings.theme.colors.backgroundImage', defaultValue: this._themesService.getCustomProperty('backgroundImage') }
         ]
     }
 
@@ -94,10 +93,9 @@ export class SettingsComponent implements OnInit {
             case 'primary':
             case 'secondary':
             case 'accent':
-            case 'accentLight':
-            case 'light':
-            case 'dark':
+            case 'accentActive':
             case 'background':
+            case 'backgroundImage':
                 this.setCustomTheme();
                 break;
         }

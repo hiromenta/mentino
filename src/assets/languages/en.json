@@ -21,11 +21,10 @@
             "colors": {
                 "primary": "Primary color",
                 "secondary": "Secondary color",
-                "accent": "Accent color (normal)",
-                "accentLight": "Accent color (light)",
-                "light": "Light color",
-                "dark": "Dark color",
-                "background": "URL background image"
+                "accent": "Accent color",
+                "accentActive": "Accent color (active)",
+                "background": "Background color",
+                "backgroundImage": "URL background image"
             }
         }
     },

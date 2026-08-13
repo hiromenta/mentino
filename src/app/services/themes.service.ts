@@ -9,14 +9,13 @@ export class ThemesService {
     private _currentThemeName = this._getThemeFromLocalStorage();
     private _currentTheme?: Theme;
 
-    defaults = {
-        primary: '#6f766f',
-        secondary: '#d5e2d6',
-        accent: '#567656',
-        accentLight: '#bbddbe',
-        light: '#dbded9',
-        dark: '#292929',
-        background: ''
+    defaults: Theme = {
+        primary: '#dde4e3',
+        secondary: '#a54040',
+        accent: '#bbddbe',
+        accentActive: '#7da67d',
+        background: '#b8c7b9',
+        backgroundImage: ''
     };
 
     constructor(private _configService: ConfigService) {}
@@ -69,14 +68,13 @@ export class ThemesService {
             primary: customTheme.primary || this.defaults.primary,
             secondary: customTheme.secondary || this.defaults.secondary,
             accent: customTheme.accent || this.defaults.accent,
-            accentLight: customTheme.accentLight || this.defaults.accentLight,
-            light: customTheme.light || this.defaults.light,
-            dark: customTheme.dark || this.defaults.dark,
-            background: customTheme.background || this.defaults.background
+            accentActive: customTheme.accentActive || this.defaults.accentActive,
+            background: customTheme.background || this.defaults.background,
+            backgroundImage: customTheme.backgroundImage || this.defaults.backgroundImage
         };
 
         for (const [key, value] of Object.entries(theme)) {
-            document.documentElement.style.setProperty('--' + key, `${key === 'background' ? 'url("' + value + '")' : value}`);
+            document.documentElement.style.setProperty('--' + key, `${key === 'backgroundImage' ? 'url("' + value + '")' : value}`);
         }
 
         localStorage.setItem('theme', Themes.CUSTOM);

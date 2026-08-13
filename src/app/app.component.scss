@@ -10,7 +10,7 @@
 }
 
 .container {
-    background-color: var(--secondary);
+    background-color: var(--background);
     border: 5px solid var(--primary);
     padding: 1rem;
     position: absolute;
@@ -42,14 +42,14 @@
     padding: 0.25rem 0.5rem;
     cursor: pointer;
     flex: 1;
-    color: var(--light);
+    color: var(--secondary);
 
     &:hover {
-        background-color: var(--dark);
+        background-color: var(--accentActive);
     }
 
     &.active {
-        background-color: var(--accent);
-        color: var(--accentLight);
+        background-color: var(--accentActive);
+        color: var(--text);
     }
 }
