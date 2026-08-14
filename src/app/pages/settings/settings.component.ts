@@ -62,6 +62,7 @@ export class SettingsComponent implements OnInit {
             { type: ControlType.COLOR, selector: 'accent', label: 'settings.theme.colors.accent', defaultValue: this._themesService.getCustomProperty('accent') },
             { type: ControlType.COLOR, selector: 'accentActive', label: 'settings.theme.colors.accentActive', defaultValue: this._themesService.getCustomProperty('accentActive') },
             { type: ControlType.COLOR, selector: 'background', label: 'settings.theme.colors.background', defaultValue: this._themesService.getCustomProperty('background') },
+            { type: ControlType.COLOR, selector: 'text', label: 'settings.theme.colors.text', defaultValue: this._themesService.getCustomProperty('text') },
             { type: ControlType.TEXT, selector: 'backgroundImage', placeholder: 'settings.theme.colors.backgroundImage', defaultValue: this._themesService.getCustomProperty('backgroundImage') }
         ]
     }

@@ -1,5 +1,10 @@
 export interface Mushroom {
     name: string;
+    class: string;
+    order: string;
+    family: string;
+    genus: string;
+    species: string;
     capColors: string[];
     capMargin: string[];
     stipeColors: string[];
@@ -23,3 +28,11 @@ export interface Mushroom {
 }
 
 export type Safety = 'E' | 'EB' | 'I' | 'P';
+
+export interface Shroomdle {
+    date: string;
+    solved: boolean;
+    attempts: { index: number; mushroom: Mushroom }[];
+    words: { index: number; attempt: string }[];
+    wonWithList: boolean;
+}

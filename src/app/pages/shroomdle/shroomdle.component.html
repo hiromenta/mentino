@@ -1,0 +1,63 @@
+@if (lost || won) {
+    <div class="correct-mushroom" [class.lost]="lost" [class.won]="won">
+        <div class="name">{{ getRandomMushroom()?.name | titlecase }}</div>
+        <div class="picture">
+            <img [src]="'../../../assets/mushrooms/' + getImgName(getRandomMushroom()?.name) + '_min.jpg'" [alt]="getRandomMushroom()?.name">
+        </div>
+    </div>
+}
+
+@if (!hasGuessedDetails()) {
+    <div class="search">
+        <input #mushroomSearch type="text" [disabled]="won || lost">
+
+        <div class="attempts-left">{{ getAttemptsLeft() }} {{ 'shroomdle.attempts-left' | translate }}</div>
+
+        @if (showList) {
+            <div class="mushrooms">
+                @for (mushroom of getMushrooms(); track mushroom) {
+                    <div class="list-mushroom" (click)="makeAttempt(mushroom)">{{ mushroom.name | titlecase }}</div>
+                }
+            </div>
+        }
+    </div>
+
+    <div class="attempts">
+        @for (attempt of getAttempts(); track attempt) {
+            <div class="attempt">
+                <div class="name">{{ attempt.mushroom.name | titlecase }}</div>
+                <div class="info">
+                    <div class="class" [class.correct]="isDetailCorrect(attempt.mushroom, 'class')"><span>{{ 'mushrooms.filters.class.title' | translate }}: </span>{{ attempt.mushroom.class | titlecase }}</div>
+                    <div class="order" [class.correct]="isDetailCorrect(attempt.mushroom, 'order')"><span>{{ 'mushrooms.filters.order.title' | translate }}: </span>{{ attempt.mushroom.order | titlecase }}</div>
+                    <div class="family" [class.correct]="isDetailCorrect(attempt.mushroom, 'family')"><span>{{ 'mushrooms.filters.family.title' | translate }}: </span>{{ attempt.mushroom.family | titlecase }}</div>
+                    <div class="genus" [class.correct]="isDetailCorrect(attempt.mushroom, 'genus')"><span>{{ 'mushrooms.filters.genus.title' | translate }}: </span>{{ attempt.mushroom.genus | titlecase }}</div>
+                </div>
+            </div>
+        }
+    </div>
+} @else {
+    <div class="header">
+        <div class="class"><span>{{ 'mushrooms.filters.class.title' | translate }}: </span>{{ getRandomMushroom()?.class | titlecase }}</div>
+        <div class="order"><span>{{ 'mushrooms.filters.order.title' | translate }}: </span>{{ getRandomMushroom()?.order | titlecase }}</div>
+        <div class="family"><span>{{ 'mushrooms.filters.family.title' | translate }}: </span>{{ getRandomMushroom()?.family | titlecase }}</div>
+        <div class="genus"><span>{{ 'mushrooms.filters.genus.title' | translate }}: </span>{{ getRandomMushroom()?.genus | titlecase }}</div>
+    </div>
+
+    <div class="boxes">
+        @if (error) {
+            <div class="alert">{{ 'shroomdle.alert' | translate }}</div>
+        }
+
+        @for (box of getSpecies(); track box; let i = $index) {
+            <div class="box">
+                @for (letter of getSpecies(); track letter; let y = $index) {
+                    <input #hiddenInput [id]="'hidden-input-' + i + '-' + y" type="hidden" maxlength="1">
+
+                    <div class="letter" (click)="focusInput(hiddenInput)">
+                        <span>{{ hiddenInput.value }}</span>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+}

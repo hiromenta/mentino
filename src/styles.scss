@@ -64,3 +64,11 @@ html, body {
     font-family: "Cascadia Mono", sans-serif;
     font-optical-sizing: auto;;
 }
+
+input {
+    outline: none;
+    border: 2px solid var(--secondary);
+    background-color: var(--background);
+    padding: 0.25rem 0.5rem;
+    color: var(--text);
+}

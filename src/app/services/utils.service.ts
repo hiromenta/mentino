@@ -46,8 +46,81 @@ export class UtilsService {
     }
 
     getRandomSelector() {
-        const number = Math.random() * 100;
-        return 's' + number.toString().split('.')[1];
+        const number = Math.round(Math.random() * 10000);
+        return 's' + number.toString();
+    }
+
+    seededRandomWithString(seed: string, min?: number, max?: number, round?: boolean): number {
+        let _min = min;
+        let _max = max;
+
+        if (!_min && !max) {
+            _min = 0;
+            _max = 1;
+        }
+
+        if (_min && !_max) {
+            _max = _min + 1;
+        }
+
+        if (!_min && _max) {
+            _min = _max - 1;
+        }
+
+        if (_min! > _max!) {
+            throw new Error('[max] must be greater than [min]');
+        }
+
+        let hash = 0;
+
+        for (let i = 0; i < seed.length; i++) {
+            hash = (hash << 5) - hash + seed.charCodeAt(i);
+            hash |= 0;
+        }
+
+        const normalized = (hash >>> 0) / 4294967296;
+
+        if (round) {
+            return Math.floor(normalized * (_max! - _min! + 1)) + _min!;
+        }
+        
+        return normalized * (_max! - _min! + 1) + _min!;
+    }
+
+    seededRandom(seed: number, min?: number, max?: number, round?: boolean): number {
+        let _min = min;
+        let _max = max;
+
+        if (!_min && !max) {
+            _min = 0;
+            _max = 1;
+        }
+
+        if (_min && !_max) {
+            _max = _min + 1;
+        }
+
+        if (!_min && _max) {
+            _min = _max - 1;
+        }
+
+        if (_min! > _max!) {
+            throw new Error('[max] must be greater than [min]');
+        }
+
+        let x = seed >>> 0;
+
+        x = Math.imul(x ^ (x >>> 16), 0x45d9f3b);
+        x = Math.imul(x ^ (x >>> 16), 0x45d9f3b);
+        x = x ^ (x >>> 16);
+
+        const normalized = (x >>> 0) / 4294967296;
+
+        if (round) {
+            return Math.floor(normalized * (_max! - _min! + 1)) + _min!;
+        }
+        
+        return normalized * (_max! - _min! + 1) + _min!;
     }
 
 }

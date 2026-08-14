@@ -10,5 +10,6 @@ export interface Theme {
     accent: string;
     accentActive: string;
     background: string;
+    text: string;
     backgroundImage: string;
 }

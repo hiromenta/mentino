@@ -28,8 +28,9 @@ export class AppComponent implements OnInit {
   loadedServices: any[] = [];
 
   tabs = [
-    { label: 'mushrooms.tabs.home', urls: [Paths.HOME, Paths.MUSHROOM] },
-    { label: 'mushrooms.tabs.settings', urls: [Paths.SETTINGS] }
+    { label: 'home.tabs.home', urls: [Paths.HOME, Paths.MUSHROOM] },
+    { label: 'home.tabs.shroomdle', urls: [Paths.SHROOMDLE] },
+    { label: 'home.tabs.settings', urls: [Paths.SETTINGS] }
   ];
 
   constructor(

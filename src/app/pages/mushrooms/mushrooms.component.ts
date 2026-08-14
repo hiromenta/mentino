@@ -30,6 +30,14 @@ export class MushroomsComponent implements OnInit {
         { type: ControlType.SPACER, selector: this._utilsService.getRandomSelector() }
     ] };
 
+    typeDetails: (keyof Mushroom)[] = [
+        'class',
+        'order',
+        'family',
+        'genus',
+        'species'
+    ];
+
     details: (keyof Mushroom)[] = [
         'capColors',
         'capMargin',
@@ -45,6 +53,7 @@ export class MushroomsComponent implements OnInit {
         'smell',
         'taste'
     ];
+
     allDetails: (keyof Mushroom)[] = [
         ...this.details,
         'safety'
@@ -190,6 +199,7 @@ export class MushroomsComponent implements OnInit {
     getImgName(name: string) {
         const mushroomName = name.replaceAll(' ', '');
         const folderName = name.split(' ')[0];
+
         return `${folderName}/${mushroomName}/${mushroomName}`;
     }
 

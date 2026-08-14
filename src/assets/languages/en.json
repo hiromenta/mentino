@@ -24,15 +24,19 @@
                 "accent": "Accent color",
                 "accentActive": "Accent color (active)",
                 "background": "Background color",
+                "text": "Text color",
                 "backgroundImage": "URL background image"
             }
         }
     },
-    "mushrooms": {
+    "home": {
         "tabs": {
             "home": "Home",
+            "shroomdle": "Shroomdle",
             "settings": "Settings"
-        },
+        }
+    },
+    "mushrooms": {
         "filters": {
             "peculiarity": {
                 "title": "Peculiarity",
@@ -46,6 +50,21 @@
             "name": {
                 "title": "Name",
                 "hint": "Genus or species"
+            },
+            "class": {
+                "title": "Class"
+            },
+            "order": {
+                "title": "Order"
+            },
+            "family": {
+                "title": "Family"
+            },
+            "genus": {
+                "title": "Genus"
+            },
+            "species": {
+                "title": "Species"
             },
             "capColors": {
                 "title": "Cap color",
@@ -247,5 +266,9 @@
         "alert": "The method used is not completely safe, do not pick up mushrooms you don't know",
         "wikipedia": "See more on ",
         "message": "Missing a mushroom? Open an issue on "
+    },
+    "shroomdle": {
+        "alert": "Not a valid mushroom",
+        "attempts-left": "attempts left"
     }
 }

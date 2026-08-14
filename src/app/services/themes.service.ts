@@ -15,6 +15,7 @@ export class ThemesService {
         accent: '#bbddbe',
         accentActive: '#7da67d',
         background: '#b8c7b9',
+        text: '#111',
         backgroundImage: ''
     };
 
@@ -70,6 +71,7 @@ export class ThemesService {
             accent: customTheme.accent || this.defaults.accent,
             accentActive: customTheme.accentActive || this.defaults.accentActive,
             background: customTheme.background || this.defaults.background,
+            text: customTheme.text || this.defaults.text,
             backgroundImage: customTheme.backgroundImage || this.defaults.backgroundImage
         };
 

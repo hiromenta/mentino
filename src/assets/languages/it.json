@@ -24,15 +24,19 @@
                 "accent": "Colore d'accento",
                 "accentActive": "Colore d'accento (attivo)",
                 "background": "Colore sfondo",
+                "text": "Colore del testo",
                 "backgroundImage": "URL immagine di sfondo"
             }
         }
     },
-    "mushrooms": {
+    "home": {
         "tabs": {
             "home": "Home",
+            "shroomdle": "Shroomdle",
             "settings": "Impostazioni"
-        },
+        }
+    },
+    "mushrooms": {
         "filters": {
             "peculiarity": {
                 "title": "Peculiarità",
@@ -46,6 +50,21 @@
             "name": {
                 "title": "Nome",
                 "hint": "Genere o specie"
+            },
+            "class": {
+                "title": "Classe"
+            },
+            "order": {
+                "title": "Ordine"
+            },
+            "family": {
+                "title": "Famiglia"
+            },
+            "genus": {
+                "title": "Genere"
+            },
+            "species": {
+                "title": "Specie"
             },
             "capColors": {
                 "title": "Colore cappello",
@@ -247,5 +266,9 @@
         "alert": "Il metodo utilizzato non è completamente sicuro, non raccogliere funghi che non conosci",
         "wikipedia": "Vedi di più su ",
         "message": "Manca un fungo? Apri un issue su "
+    },
+    "shroomdle": {
+        "alert": "Non è un fungo valido",
+        "attempts-left": "tentativi rimasti"
     }
 }

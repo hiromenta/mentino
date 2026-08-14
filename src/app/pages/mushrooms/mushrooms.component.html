@@ -89,18 +89,29 @@
                     </div>
                 }
 
+                @for (prop of typeDetails; track prop) {
+                    @if (getSanifiedValue(mushroom[prop]).length) {
+                        <div [class]="prop">
+                            <span class="label">{{ 'mushrooms.filters.' + prop + '.title' | translate }}:&nbsp;</span>
+                            <span>{{ getSanifiedValue(mushroom[prop])[0] | titlecase }}</span>
+                        </div>
+                    }
+
+                    @if (getSanifiedValue(mushroom[prop]).length) {
+                        <div class="spacer"></div>
+                    }
+                }
+
                 @for (prop of details; track prop; let last = $last) {
                     @if (getSanifiedValue(mushroom[prop]).length) {
                         <div [class]="prop">
                             <span class="label">{{ 'mushrooms.filters.' + prop + '.title' | translate }}:&nbsp;</span>
 
-                            @for (el of getSanifiedValue(mushroom[prop]); track el; let last = $last) {
+                            @for (el of getSanifiedValue(mushroom[prop]); track el; let lastProp = $last) {
                                 <span>
-                                    {{ ('mushrooms.filters.' + prop + '.' + el) | translate }}
-
-                                    @if (!last) {
-                                        <span>,&nbsp;</span>
-                                    }
+                                    <span>
+                                        {{ ('mushrooms.filters.' + prop + '.' + el) | translate }}@if (!lastProp) {,&nbsp;}
+                                    </span>
                                 </span>
                             }
                         </div>
