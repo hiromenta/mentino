@@ -107,8 +107,9 @@
 .header {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem 2rem;
     margin-bottom: 2rem;
+    flex-wrap: wrap;
 
     div {
         span {
@@ -130,25 +131,31 @@
         display: flex;
 
         .letter {
-            width: 5rem;
-            height: 5rem;
+            width: 9vw;
+            height: 9vw;
+            max-width: 5rem;
+            max-height: 5rem;
             border: 2px solid var(--secondary);
             background-color: var(--primary);
-            font-size: 3rem;
+            font-size: 3vw;
             display: flex;
             justify-content: center;
             align-items: center;
+            color: var(--text);
 
             &.not-present {
                 background-color: var(--black);
+                color: var(--white);
             }
 
             &.present {
                 background-color: var(--warning);
+                color: var(--white);
             }
 
             &.correct {
                 background-color: var(--success);
+                color: var(--white);
             }
         }
     }

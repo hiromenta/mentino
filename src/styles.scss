@@ -2,18 +2,22 @@
 
 // Variables will be overwritten by themes.service.ts
 :root {
+    // LIGHT
+    --primary: #afff90;
+    --secondary: #c09858;
+    --accent: #749a3f;
+    --accentActive: #4e682a;
+    --background: #e0ebd5;
+    --text: #111;
+
+    // DARK
     --primary: #454f2d;
     --secondary: #9f7e4a;
     --accent: #797f3e;
     --accentActive: #5b762d;
-    --background: #394032,
-    --text: #e7e7e7,
-    // --primary: #dded9b;
-    // --secondary: #c09858;
-    // --accent: #749a3f;
-    // --accentActive: #4e682a;
-    // --background: #ede383,
-    // --text: #111,
+    --background: #394032;
+    --text: #e7e7e7;
+
     --backgroundImage: url('/assets/images/leaves_dark.jpg');
 
     --white: #e7e7e7;

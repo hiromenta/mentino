@@ -46,7 +46,7 @@ export class ThemesService {
     private _changeTheme(theme: Themes): Observable<Theme> {
         return this._configService.getThemesConfig().pipe(map((themes) => {
             if (!themes[theme]) {
-                theme = Themes.LIGHT;
+                theme = Themes.DARK;
             }
 
             for (const property of Object.entries(themes[theme])) {
@@ -92,7 +92,7 @@ export class ThemesService {
             return (localStorage.getItem('theme')!) as Themes;
         }
 
-        return Themes.LIGHT;
+        return Themes.DARK;
     }
 
     setCustomProperty(prop: keyof Theme, value: string) {

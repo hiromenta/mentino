@@ -55,7 +55,7 @@ export class SettingsComponent implements OnInit {
                     { value: Themes.DARK, label: 'settings.theme.themes.dark' },
                     { value: Themes.CUSTOM, label: 'settings.theme.themes.custom' }
                 ],
-                defaultValue: localStorage.getItem('theme') || Themes.LIGHT
+                defaultValue: localStorage.getItem('theme') || Themes.DARK
             },
             { type: ControlType.COLOR, selector: 'primary', label: 'settings.theme.colors.primary', defaultValue: this._themesService.getCustomProperty('primary') },
             { type: ControlType.COLOR, selector: 'secondary', label: 'settings.theme.colors.secondary', defaultValue: this._themesService.getCustomProperty('secondary') },

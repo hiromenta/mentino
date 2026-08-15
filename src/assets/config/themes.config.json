@@ -1,10 +1,10 @@
 {
     "light": {
-        "primary": "#dded9b",
+        "primary": "#afff90",
         "secondary": "#c09858",
         "accent": "#749a3f",
         "accentActive": "#4e682a",
-        "background": "#ede383",
+        "background": "#e0ebd5",
         "text": "#111",
         "backgroundImage": "url('/assets/images/leaves_light.jpg')"
     },
