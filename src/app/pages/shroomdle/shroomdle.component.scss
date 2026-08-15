@@ -1,8 +1,14 @@
+.shroomdle-wrapper {
+    overflow-y: auto;
+    height: calc(100% - 2rem);
+}
+
 .correct-mushroom {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 2rem;
+    cursor: pointer;
 
     &.lost {
         background-image: linear-gradient(var(--danger), transparent);
@@ -132,6 +138,55 @@
             display: flex;
             justify-content: center;
             align-items: center;
+
+            &.not-present {
+                background-color: var(--black);
+            }
+
+            &.present {
+                background-color: var(--warning);
+            }
+
+            &.correct {
+                background-color: var(--success);
+            }
+        }
+    }
+}
+
+.show-keyboard {
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .row {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        svg {
+            fill: var(--text);
+        }
+
+        .key {
+            cursor: pointer;
+            width: 4rem;
+            background-color: var(--accent);
+            border: 2px solid var(--secondary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+
+            &:hover {
+                background-color: var(--accentActive);
+            }
 
             &.not-present {
                 background-color: var(--black);

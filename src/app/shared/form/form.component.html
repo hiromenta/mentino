@@ -2,7 +2,7 @@
     @for (control of form.controls; track control) {
         @switch (control.type) {
             @case (getControlType().TITLE) {
-                <div>{{ control.selector | translate }}</div>
+                <div class="title">{{ control.selector | translate }}</div>
             }
 
             @case (getControlType().TEXT) {

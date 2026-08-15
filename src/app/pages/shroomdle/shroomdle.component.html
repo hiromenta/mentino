@@ -1,26 +1,85 @@
-@if (lost || won) {
-    <div class="correct-mushroom" [class.lost]="lost" [class.won]="won">
-        <div class="name">{{ getRandomMushroom()?.name | titlecase }}</div>
-        <div class="picture">
-            <img [src]="'../../../assets/mushrooms/' + getImgName(getRandomMushroom()?.name) + '_min.jpg'" [alt]="getRandomMushroom()?.name">
+<div class="shroomdle-wrapper">
+    @if (lost || won) {
+        <div class="correct-mushroom" [class.lost]="lost" [class.won]="won" (click)="goToMushroom()">
+            <div class="name">{{ getRandomMushroom()?.name | titlecase }}</div>
+            <div class="picture">
+                <img [src]="'../../../assets/mushrooms/' + getImgName(getRandomMushroom()?.name) + '_min.jpg'" [alt]="getRandomMushroom()?.name">
+            </div>
         </div>
-    </div>
-}
+    }
 
-@if (!hasGuessedDetails()) {
-    <div class="search">
-        <input #mushroomSearch type="text" [disabled]="won || lost">
+    @if (!hasGuessedDetails()) {
+        <div class="search">
+            <input #mushroomSearch type="text" [disabled]="won || lost">
 
-        <div class="attempts-left">{{ getAttemptsLeft() }} {{ 'shroomdle.attempts-left' | translate }}</div>
+            <div class="attempts-left">{{ getAttemptsLeft() }} {{ 'shroomdle.attempts-left' | translate }}</div>
 
-        @if (showList) {
-            <div class="mushrooms">
-                @for (mushroom of getMushrooms(); track mushroom) {
-                    <div class="list-mushroom" (click)="makeAttempt(mushroom)">{{ mushroom.name | titlecase }}</div>
+            @if (showList) {
+                <div class="mushrooms">
+                    @for (mushroom of getMushrooms(); track mushroom) {
+                        <div class="list-mushroom" (click)="makeAttempt(mushroom)">{{ mushroom.name | titlecase }}</div>
+                    }
+                </div>
+            }
+        </div>
+    }
+
+    @if (hasGuessedDetails()) {
+        <div class="header">
+            <div class="class"><span>{{ 'mushrooms.filters.class.title' | translate }}: </span>{{ getRandomMushroom()?.class | titlecase }}</div>
+            <div class="order"><span>{{ 'mushrooms.filters.order.title' | translate }}: </span>{{ getRandomMushroom()?.order | titlecase }}</div>
+            <div class="family"><span>{{ 'mushrooms.filters.family.title' | translate }}: </span>{{ getRandomMushroom()?.family | titlecase }}</div>
+            <div class="genus"><span>{{ 'mushrooms.filters.genus.title' | translate }}: </span>{{ getRandomMushroom()?.genus | titlecase }}</div>
+        </div>
+
+        <div class="boxes">
+            @if (error) {
+                <div class="alert">{{ 'shroomdle.alert' | translate }}</div>
+            }
+
+            @for (box of getNumberOfSpeciesWithSameLetters(); track box; let i = $index) {
+                <div class="box">
+                    @for (letter of getSpecies(); track letter; let y = $index) {
+                        <input #hiddenInput [id]="'hidden-input-' + i + '-' + y" type="hidden" maxlength="1">
+
+                        <div class="letter" (click)="focusInput(hiddenInput)">
+                            <span>{{ hiddenInput.value }}</span>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+
+        @if (!won && !lost) {
+            <div class="show-keyboard">
+                <button (click)="showKeyboard = !showKeyboard">{{ (showKeyboard ? 'shroomdle.hide-keyboard' : 'shroomdle.show-keyboard') | translate }}</button>
+            </div>
+        }
+
+        @if (showKeyboard && !won && !lost) {
+            <div class="keyboard">
+                @for (row of keyboardRows; track row) {
+                    <div class="row">
+                        @for (key of row; track key) {
+                            @if (key === 'Backspace') {
+                                <svg class="key" (click)="onKeyInput(key)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M576 192C576 156.7 547.3 128 512 128L205.3 128C188.3 128 172 134.7 160 146.7L9.4 297.4C3.4 303.4 0 311.5 0 320C0 328.5 3.4 336.6 9.4 342.6L160 493.3C172 505.3 188.3 512 205.3 512L512 512C547.3 512 576 483.3 576 448L576 192zM284.1 252.1C293.5 242.7 308.7 242.7 318 252.1L351.9 286L385.8 252.1C395.2 242.7 410.4 242.7 419.7 252.1C429 261.5 429.1 276.7 419.7 286L385.8 319.9L419.7 353.8C429.1 363.2 429.1 378.4 419.7 387.7C410.3 397 395.1 397.1 385.8 387.7L351.9 353.8L318 387.7C308.6 397.1 293.4 397.1 284.1 387.7C274.8 378.3 274.7 363.1 284.1 353.8L318 319.9L284.1 286C274.7 276.6 274.7 261.4 284.1 252.1z"/></svg>
+                            } @else if (key === 'Enter') {
+                                <svg class="key" (click)="onKeyInput(key)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M268.2 82.4C280.2 87.4 288 99 288 112L288 192L400 192C497.2 192 576 270.8 576 368C576 481.3 494.5 531.9 475.8 542.1C473.3 543.5 470.5 544 467.7 544C456.8 544 448 535.1 448 524.3C448 516.8 452.3 509.9 457.8 504.8C467.2 496 480 478.4 480 448.1C480 395.1 437 352.1 384 352.1L288 352.1L288 432.1C288 445 280.2 456.7 268.2 461.7C256.2 466.7 242.5 463.9 233.3 454.8L73.3 294.8C60.8 282.3 60.8 262 73.3 249.5L233.3 89.5C242.5 80.3 256.2 77.6 268.2 82.6z"/></svg>
+                            } @else {
+                                <div
+                                    class="key"
+                                    [class.not-present]="isKey(key, 'not-present')"
+                                    [class.present]="isKey(key, 'present')"
+                                    [class.correct]="isKey(key, 'correct')"
+                                    (click)="onKeyInput(key)"
+                                >{{ key | titlecase }}</div>
+                            }
+                        }
+                    </div>
                 }
             </div>
         }
-    </div>
+    }
 
     <div class="attempts">
         @for (attempt of getAttempts(); track attempt) {
@@ -35,29 +94,4 @@
             </div>
         }
     </div>
-} @else {
-    <div class="header">
-        <div class="class"><span>{{ 'mushrooms.filters.class.title' | translate }}: </span>{{ getRandomMushroom()?.class | titlecase }}</div>
-        <div class="order"><span>{{ 'mushrooms.filters.order.title' | translate }}: </span>{{ getRandomMushroom()?.order | titlecase }}</div>
-        <div class="family"><span>{{ 'mushrooms.filters.family.title' | translate }}: </span>{{ getRandomMushroom()?.family | titlecase }}</div>
-        <div class="genus"><span>{{ 'mushrooms.filters.genus.title' | translate }}: </span>{{ getRandomMushroom()?.genus | titlecase }}</div>
-    </div>
-
-    <div class="boxes">
-        @if (error) {
-            <div class="alert">{{ 'shroomdle.alert' | translate }}</div>
-        }
-
-        @for (box of getSpecies(); track box; let i = $index) {
-            <div class="box">
-                @for (letter of getSpecies(); track letter; let y = $index) {
-                    <input #hiddenInput [id]="'hidden-input-' + i + '-' + y" type="hidden" maxlength="1">
-
-                    <div class="letter" (click)="focusInput(hiddenInput)">
-                        <span>{{ hiddenInput.value }}</span>
-                    </div>
-                }
-            </div>
-        }
-    </div>
-}
+</div>

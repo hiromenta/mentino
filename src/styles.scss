@@ -72,3 +72,13 @@ input {
     padding: 0.25rem 0.5rem;
     color: var(--text);
 }
+
+button {
+    outline: none;
+    border: 2px solid var(--secondary);
+    background-color: var(--primary);
+    color: var(--text);
+    border-radius: 5px;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}

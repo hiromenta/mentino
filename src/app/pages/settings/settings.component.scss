@@ -4,5 +4,13 @@
     .form {
         height: calc(100% - 2rem);
         overflow-y: auto;
+
+        &.custom {
+            ::ng-deep input {
+                &[type="color"] {
+                    width: 3rem !important;
+                }
+            }
+        }
     }
 }

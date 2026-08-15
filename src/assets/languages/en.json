@@ -269,6 +269,8 @@
     },
     "shroomdle": {
         "alert": "Not a valid mushroom",
-        "attempts-left": "attempts left"
+        "attempts-left": "attempts left",
+        "hide-keyboard": "Hide keyboard",
+        "show-keyboard": "Show keyboard"
     }
 }

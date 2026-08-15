@@ -5,6 +5,8 @@ import { LoaderService } from "../../services/loader.service";
 import { TitleCasePipe } from "@angular/common";
 import { UtilsService } from "../../services/utils.service";
 import { TranslatePipe } from "../../pipes/translate.pipe";
+import { Router } from "@angular/router";
+import { Paths } from "../../app.routes";
 
 @Component({
     selector: 'my-shroomdle',
@@ -23,6 +25,14 @@ export class ShroomdleComponent implements OnInit, AfterViewInit {
     mushrooms: Mushroom[] = [];
 
     showList = false;
+    showKeyboard = false;
+
+    keyboardRows = [
+        ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+        ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'Backspace'],
+        ['z', 'x', 'c', 'v', 'b', 'n', 'm', 'Enter']
+    ];
+
     error = false;
 
     lost = false;
@@ -36,7 +46,8 @@ export class ShroomdleComponent implements OnInit, AfterViewInit {
     constructor(
         private _mushroomService: MushroomsService,
         private _loaderService: LoaderService,
-        private _utilsService: UtilsService
+        private _utilsService: UtilsService,
+        private _router: Router
     ) {}
 
     ngOnInit(): void {
@@ -75,13 +86,71 @@ export class ShroomdleComponent implements OnInit, AfterViewInit {
         }, 100);
     }
 
+    getUsedKeys() {
+        const usedMultipleKeys: { key: string; state: string }[] = [];
+        const usedKeys: { key: string; state: string }[] = [];
+
+        for (let i = 0; i < this.getNumberOfSpeciesWithSameLetters().length; i++) {
+            for (let j = 0; j < this.getSpecies().length; j++) {
+                const letterBox = this._getLetterBox(j, i);
+
+                const key = this._getHiddenInput(i, j).value || '';
+                const classes = letterBox.classList;
+                const state = classes[classes.length - 1];
+
+                usedMultipleKeys.push({ key, state });
+            }
+        }
+
+        for (const key of usedMultipleKeys) {
+            if (!usedKeys.map(k => k.key).includes(key.key)) {
+                usedKeys.push(key);
+            } else {
+                const keyInArrey = usedKeys.find(k => k.key === key.key);
+
+                if (keyInArrey) {
+                    if (this._getLetterStateValue(key.state) > this._getLetterStateValue(keyInArrey.state)) {
+                        keyInArrey.state = key.state;
+                    }
+                }
+            }
+        }
+
+        return usedKeys;
+    }
+
+    private _getLetterStateValue(state: string) {
+        if (state === 'present') {
+            return 1;
+        }
+
+        if (state === 'correct') {
+            return 2;
+        }
+
+        return 0;
+    }
+
+    isKey(key: string, state: 'not-present' | 'present' | 'correct') {
+        if (['Backspace', 'Enter'].includes(key)) {
+            return false;
+        }
+
+        const foundKey = this.getUsedKeys().find(k => k.key === key.toUpperCase());
+        return foundKey?.state === state;
+    }
+
     @HostListener('window:keydown', ['$event'])
-    onInput(ev: KeyboardEvent | null) {
+    onInputEvent(ev: KeyboardEvent | null) {
+        this.onKeyInput(ev?.key || '');
+    }
+
+    onKeyInput(key: string) {
         if (!this.hasGuessedDetails() || this.lost || this.won) {
             return;
         }
 
-        switch(ev?.key) {
+        switch(key) {
             case 'Backspace':
                 if (this._getCurrentInput().value || this._overrideLetter) {
                     this._getCurrentInput().value = '';
@@ -100,11 +169,11 @@ export class ShroomdleComponent implements OnInit, AfterViewInit {
                 this.makeWordAttempt();
                 break;
             default:
-                if (!this.checkInput(ev?.key || '')) {
+                if (!this.checkInput(key)) {
                     return;
                 }
 
-                const value = (ev?.key || '').toUpperCase()
+                const value = key.toUpperCase()
 
                 if (!this._getCurrentInput().value || this._overrideLetter) {
                     this._getCurrentInput().value = value;
@@ -260,8 +329,8 @@ export class ShroomdleComponent implements OnInit, AfterViewInit {
         return document.querySelector(`#hidden-input-${box}-${index}`) as HTMLInputElement;
     }
 
-    private _getLetterBox(index: number) {
-        const box = document.querySelectorAll('.box')[this._currentBox]
+    private _getLetterBox(index: number, boxIndex?: number) {
+        const box = document.querySelectorAll('.box')[boxIndex ?? this._currentBox]
         const letter = box.querySelectorAll('.letter')[index];
 
         return letter;
@@ -272,6 +341,10 @@ export class ShroomdleComponent implements OnInit, AfterViewInit {
     }
 
     getRandomMushroom(): Mushroom | undefined {
+        if (!this.mushrooms.length) {
+            return undefined;
+        }
+
         const today = new Date();
         today.setHours(0, 0, 0, 0);
         const seed = today.getTime();
@@ -282,6 +355,14 @@ export class ShroomdleComponent implements OnInit, AfterViewInit {
 
     getSpecies() {
         return this.getRandomMushroom()?.species?.split('') || [];
+    }
+
+    getNumberOfSpeciesWithSameLetters() {
+        const sameGenus = this.mushrooms.filter(m => m.genus === this.getRandomMushroom()?.genus);
+        const sameSpeciesLength = sameGenus.filter(m => m.species.length === this.getRandomMushroom()?.species.length);
+        const size = Math.max(2, Math.ceil(sameSpeciesLength.length / 2));
+
+        return sameSpeciesLength.filter((m, i) => i < size).map((m, i) => i);
     }
 
     checkInput(input: string) {
@@ -300,6 +381,10 @@ export class ShroomdleComponent implements OnInit, AfterViewInit {
         const folderName = (name || '').split(' ')[0];
 
         return `${folderName}/${mushroomName}/${mushroomName}`;
+    }
+
+    goToMushroom() {
+        this._router.navigate([Paths.HOME, Paths.MUSHROOM, this._sanify(this.getRandomMushroom()?.name || '')],)
     }
 
 }

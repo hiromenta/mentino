@@ -269,6 +269,8 @@
     },
     "shroomdle": {
         "alert": "Non è un fungo valido",
-        "attempts-left": "tentativi rimasti"
+        "attempts-left": "tentativi rimasti",
+        "hide-keyboard": "Nascondi tastiera",
+        "show-keyboard": "Mostra tastiera"
     }
 }

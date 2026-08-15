@@ -48,7 +48,7 @@ export class MushroomsComponent implements OnInit {
         'hymenium',
         'stipe',
         'spores',
-        'near',
+        // 'near', // TODO: add later
         'flesh',
         'smell',
         'taste'

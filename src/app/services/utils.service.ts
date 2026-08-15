@@ -54,21 +54,21 @@ export class UtilsService {
         let _min = min;
         let _max = max;
 
-        if (!_min && !max) {
+        if (_min === undefined && _max === undefined) {
             _min = 0;
             _max = 1;
         }
 
-        if (_min && !_max) {
+        if (_min && _max === undefined) {
             _max = _min + 1;
         }
 
-        if (!_min && _max) {
+        if (_min === undefined && _max) {
             _min = _max - 1;
         }
 
         if (_min! > _max!) {
-            throw new Error('[max] must be greater than [min]');
+            throw new Error(`max [${_max}] must be greater than min [${_min}]`);
         }
 
         let hash = 0;
@@ -91,21 +91,21 @@ export class UtilsService {
         let _min = min;
         let _max = max;
 
-        if (!_min && !max) {
+        if (_min === undefined && _max === undefined) {
             _min = 0;
             _max = 1;
         }
 
-        if (_min && !_max) {
+        if (_min && _max === undefined) {
             _max = _min + 1;
         }
 
-        if (!_min && _max) {
+        if (_min === undefined && _max) {
             _min = _max - 1;
         }
 
         if (_min! > _max!) {
-            throw new Error('[max] must be greater than [min]');
+            throw new Error(`max [${_max}] must be greater than min [${_min}]`);
         }
 
         let x = seed >>> 0;
