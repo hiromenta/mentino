@@ -66,7 +66,7 @@ export class TranslateService {
             }
         }
 
-        return LanguageCode.ITALIAN;
+        return LanguageCode.ENGLISH;
     }
 
     private _getLanguage(langCode: LanguageCode): Observable<any> {
