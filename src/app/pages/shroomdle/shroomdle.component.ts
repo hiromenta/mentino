@@ -358,11 +358,7 @@ export class ShroomdleComponent implements OnInit, AfterViewInit {
     }
 
     getNumberOfSpeciesWithSameLetters() {
-        const sameGenus = this.mushrooms.filter(m => m.genus === this.getRandomMushroom()?.genus);
-        const sameSpeciesLength = sameGenus.filter(m => m.species.length === this.getRandomMushroom()?.species.length);
-        const size = Math.max(2, Math.ceil(sameSpeciesLength.length / 2));
-
-        return sameSpeciesLength.filter((m, i) => i < size).map((m, i) => i);
+        return [0, 1, 2, 3, 4, 5];
     }
 
     checkInput(input: string) {

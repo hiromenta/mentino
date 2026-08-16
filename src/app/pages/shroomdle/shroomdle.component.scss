@@ -72,7 +72,7 @@
 }
 
 .attempts {
-    margin-top: 1rem;
+    margin-top: 2rem;
 
     .attempt {
         background-color: var(--primary);
@@ -171,25 +171,25 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 0.5rem;
 
     .row {
         display: flex;
         justify-content: center;
+        gap: 0.5rem;
         width: 100%;
-
-        svg {
-            fill: var(--text);
-        }
 
         .key {
             cursor: pointer;
-            width: 4rem;
+            width: 2.5rem;
+            height: 3.5rem;
             background-color: var(--accent);
             border: 2px solid var(--secondary);
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 1rem;
+            border-radius: 5px;
+            font-size: 150%;
 
             &:hover {
                 background-color: var(--accentActive);
@@ -206,6 +206,11 @@
             &.correct {
                 background-color: var(--success);
             }
+        }
+
+        svg {
+            fill: var(--text);
+            width: 60%;
         }
     }
 }
